@@ -1,19 +1,11 @@
 var app;
 function onDeviceReady() {
+    alert('Script Attch0');
     app.findMe = function() {
         alert('Run');
         navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
     };
-//nav
-// onSuccess Callback
-    // This method accepts a Position object, which contains the
-    // current GPS coordinates
-    //
-
-
-    //navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-    alert('Script Attch');
-
+    alert('Script Attch1');
 };
 document.addEventListener("deviceready", onDeviceReady, false);
 
