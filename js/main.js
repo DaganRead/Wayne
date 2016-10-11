@@ -1,16 +1,9 @@
-var app;
 function onDeviceReady() {
-    var findMe = function() {
-        alert('Run');
-        //navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-    };
-    alert('Script Attch1');
+    document.getElementById('findMe').addEventListener("click", function() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+    }, false);
 };
 document.addEventListener("deviceready", onDeviceReady, false);
-
-document.getElementById('findMe').addEventListener("click", function() {
-    alert();
-}, false);
 
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
