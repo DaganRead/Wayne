@@ -42,79 +42,13 @@
 		</div>
 	</div>
 	<section id="page-wrap">
-	    <div class="tabs">
-	       <div class="tab">
-	           <input type="radio" value="Sales" id="tab-1" name="PrimaryNav" checked>
-	           <label for="tab-1"><img src="img/sales.png" /></label>
-	           <div class="content">
-	            <article class="search" >
-	            	<input type="text" class="search-bar" id="salesSearchText" />
-	            	<input type="image" src="img/search.png" class="search-button"  id="btn_search_sales" ><br/>
-					<input type="checkbox" name="filter" id="btn_filter_date" value="date" /> Date
-					<input type="checkbox" name="filter" id="btn_filter_location" value="location" /> Location
-					<input type="checkbox" name="filter" id="btn_filter_name" checked value="name" /> Name<br/>
-	            </article>
-	            <br/>
-	           	 <form id="sales" onsubmit="return false">
-
-				</form> 
-	           </div> 
-	       </div>
-	        
-	       <div class="tab">
-	           <input type="radio" value="Customers" onclick="app.nav.to(this.value)" id="tab-2" name="PrimaryNav">
-	           <label for="tab-2"><img src="img/customers.png" /></label>
-	           
-	           <div class="content">
-	               	<article class="search" >
-	               		<input type="image" src="img/sync.png" class="sync-button" id="btn_sync_customer">
-	               		<input type="text" class="search-bar" />
-	               		<input type="image" src="img/search.png" class="search-button" onclick="app.search.customer(this.previousSibling.value)" >
-	               	</article>
-	               	<form id="customers" onsubmit="return false">
-	               	</form>
-	           </div> 
-	       </div>
-	        
-	        <div class="tab">
-	           <input type="radio" value="Items" onclick="app.nav.to(this.value)" id="tab-3" name="PrimaryNav">
-	           <label for="tab-3"><img src="img/items.png" /></label>
-	         
-	           	<div class="content">
-	               	<article class="search" >
-	               		<input type="text" class="search-bar" />
-	               		<input type="image" src="img/search.png" class="search-button" onclick="app.search.item(this.previousSibling.value)" >
-	               	</article>
-	               	<form id="items" onsubmit="return false">
-	               	</form>
-	            </div> 
-	       </div>
-
-	       <div class="tab">
-	           <input type="radio" value="Slaughters" onclick="app.nav.to(this.value)" id="tab-4" name="PrimaryNav">
-	           <label for="tab-4"><img src="img/slaughters.png" /></label>
-	         
-	           	<div class="content">
-		               	<article id="slaughters">
-		               	</article>
-	        	</div> 
-	       </div>
-
-	       <div class="tab" id="new-tab">
-	           <input type="radio" value="New" onclick="app.nav.to(this.value, this.parentNode)" id="tab-5" name="PrimaryNav" />
-	           <label for="tab-5"><img src="img/new.png" /></label>
-	         
-	           <div class="content">
-	               <article id="newSale" ></article>
-	           </div> 
-	       </div>
-	    </div>
+	<h1>Geoloaction Example</h1>
+	<input type="button" onclick="app.findMe()">
 	</section>
 	<div class="md-overlay"></div>
 	<script src="cordova.js"></script>
 	<script src="js/socket.io.js"></script>
-	<script src="dialogs.js"></script>
-	<script src="contacts.js"></script>
+	<script src="geolocation.js"></script>
 
 	<script src="lib/jquery-1.8.2.min.js"></script>
 	<script src="js/storage/memory-store.js"></script>
