@@ -2,7 +2,7 @@ var app;
 function onDeviceReady() {
     app.findMe = function() {
         alert('Run');
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
     };
 //nav
 // onSuccess Callback
@@ -27,6 +27,9 @@ function onDeviceReady() {
               'message: ' + error.message + '\n');
     }
 
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
 };
 document.addEventListener("deviceready", onDeviceReady, false);
+
+var el = document.getElementsByTagName('input')[0];
+el.addEventListener("click", app.findMe, false);
