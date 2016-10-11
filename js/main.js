@@ -1,4 +1,3 @@
-alert('Script Attch');
 var app;
 function onDeviceReady() {
     app.findMe = function() {
@@ -10,6 +9,17 @@ function onDeviceReady() {
     // This method accepts a Position object, which contains the
     // current GPS coordinates
     //
+
+
+    //navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+    alert('Script Attch');
+
+};
+document.addEventListener("deviceready", onDeviceReady, false);
+
+var el = document.getElementsByTagName('input')[0];
+el.addEventListener("click", app.findMe, false);
+
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
@@ -27,10 +37,3 @@ function onDeviceReady() {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-};
-document.addEventListener("deviceready", onDeviceReady, false);
-
-var el = document.getElementsByTagName('input')[0];
-el.addEventListener("click", app.findMe, false);
