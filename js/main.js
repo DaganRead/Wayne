@@ -1,9 +1,8 @@
 var app;
 function onDeviceReady() {
-    alert('Script Attch0');
     app.findMe = function() {
         alert('Run');
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+        //navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
     };
     alert('Script Attch1');
 };
