@@ -1,3 +1,4 @@
+alert('Script Attch');
 var app;
 function onDeviceReady() {
     app.findMe = function() {
