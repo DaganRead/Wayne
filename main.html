@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://gaz-huntingapp.rhcloud.com/">
+ <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Gaz</title>
+  <meta name="description" content="app">
+  <meta name="author" content="Dagan Read">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pikaday.css">
+  <script src="http://gaz-huntingapp.rhcloud.com/socket.io/socket.io.js"></script>
+  <script src="js/pikaday.js"></script>
+  <script src="js/polly.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/round.js"></script>
+  <script src="js/includesPolly.js"></script>
+</head>
+<body class="cbp-spmenu-push">
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	<section>
+		<h3 class="advanced" >Advanced</h3>
+		<a href="#" class="changePassword">Change Password</a>
+		<a href="#" class="backUp">Manual Back-Up</a>
+	</section>
+	<section id="advancedMenu">
+		<h3 class="main">Main Menu</h3>
+		<a href="#" class="storeLocal"><input type="checkbox" name="vehicle" value="Car">Local data</a>
+		<a href="#" class="loginExpire"><input type="range" min="1" max="7" step="1" defaultValue="1" ><span>1 day</span></a>
+	</section>
+</nav>
+
+<nav class="banner">
+		<input type="button" id="btn_menu" onclick="app.openMenu(this)" value="Menu" />
+		<input type="button" id="btn_logout" value="Logout" />
+	</nav>
+	<div class="md-modal md-effect-12" id="modal-12">
+		<div class="md-content">
+			<iframe id="serverHandle" align="middle" frameborder="0" scrolling="no" seamless src="http://gaz-huntingapp.rhcloud.com"></iframe> 
+		</div>
+	</div>
+	<section id="page-wrap">
+	    <div class="tabs">
+	       <div class="tab">
+	           <input type="radio" value="Sales" id="tab-1" name="PrimaryNav" checked>
+	           <label for="tab-1"><img src="img/sales.png" /></label>
+	           <div class="content">
+	            <article class="search" >
+	            	<input type="text" class="search-bar" id="salesSearchText" />
+	            	<input type="image" src="img/search.png" class="search-button"  id="btn_search_sales" ><br/>
+					<input type="checkbox" name="filter" id="btn_filter_date" value="date" /> Date
+					<input type="checkbox" name="filter" id="btn_filter_location" value="location" /> Location
+					<input type="checkbox" name="filter" id="btn_filter_name" checked value="name" /> Name<br/>
+	            </article>
+	            <br/>
+	           	 <form id="sales" onsubmit="return false">
+
+				</form> 
+	           </div> 
+	       </div>
+	        
+	       <div class="tab">
+	           <input type="radio" value="Customers" onclick="app.nav.to(this.value)" id="tab-2" name="PrimaryNav">
+	           <label for="tab-2"><img src="img/customers.png" /></label>
+	           
+	           <div class="content">
+	               	<article class="search" >
+	               		<input type="image" src="img/sync.png" class="sync-button" id="btn_sync_customer">
+	               		<input type="text" class="search-bar" />
+	               		<input type="image" src="img/search.png" class="search-button" onclick="app.search.customer(this.previousSibling.value)" >
+	               	</article>
+	               	<form id="customers" onsubmit="return false">
+	               	</form>
+	           </div> 
+	       </div>
+	        
+	        <div class="tab">
+	           <input type="radio" value="Items" onclick="app.nav.to(this.value)" id="tab-3" name="PrimaryNav">
+	           <label for="tab-3"><img src="img/items.png" /></label>
+	         
+	           	<div class="content">
+	               	<article class="search" >
+	               		<input type="text" class="search-bar" />
+	               		<input type="image" src="img/search.png" class="search-button" onclick="app.search.item(this.previousSibling.value)" >
+	               	</article>
+	               	<form id="items" onsubmit="return false">
+	               	</form>
+	            </div> 
+	       </div>
+
+	       <div class="tab">
+	           <input type="radio" value="Slaughters" onclick="app.nav.to(this.value)" id="tab-4" name="PrimaryNav">
+	           <label for="tab-4"><img src="img/slaughters.png" /></label>
+	         
+	           	<div class="content">
+		               	<article id="slaughters">
+		               	</article>
+	        	</div> 
+	       </div>
+
+	       <div class="tab" id="new-tab">
+	           <input type="radio" value="New" onclick="app.nav.to(this.value, this.parentNode)" id="tab-5" name="PrimaryNav" />
+	           <label for="tab-5"><img src="img/new.png" /></label>
+	         
+	           <div class="content">
+	               <article id="newSale" ></article>
+	           </div> 
+	       </div>
+	    </div>
+	</section>
+	<div class="md-overlay"></div>
+	<script src="cordova.js"></script>
+	<script src="js/socket.io.js"></script>
+	<script src="dialogs.js"></script>
+	<script src="contacts.js"></script>
+
+	<script src="lib/jquery-1.8.2.min.js"></script>
+	<script src="js/storage/memory-store.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

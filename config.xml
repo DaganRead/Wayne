@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+    id          = "GAZ"
+    versionCode = "21"
+    version     = "1.0.0" >
+    <!-- versionCode is optional and Android only -->
+
+    <name>Farm Manager</name>
+
+    <description>
+      GeoLocation example
+    </description>
+
+    <author href="https://blackladder.co.za" email="daganread@gmail.com">
+      Dagan Read
+    </author>
+
+    <preference name="phonegap-version" value="cli-6.1.0" />
+    <!--<preference name="Fullscreen" value="true" /-->
+<!--     <platform name="android" >
+        <preference name="android-minSdkVersion" value="17" />
+        <preference name="android-targetSdkVersion" value="19" />
+        <preference name="orientation" value="portrait" />
+    </platform>  -->
+
+    <allow-navigation href="*" />
+    <access origin="*" />
+
+    <!-- We'll include the contacts plugin as an example -->
+    <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" />
+    <plugin name="cordova-plugin-network-information" spec="1.2.0" source="npm" />
+    <plugin name="cordova-plugin-geolocation" spec="1.0.0" source="npm" />
+</widget>
