@@ -15,7 +15,7 @@
       Dagan Read
     </author>
 
-    <preference name="phonegap-version" value="cli-6.1.0" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
     <!--<preference name="Fullscreen" value="true" /-->
 <!--     <platform name="android" >
         <preference name="android-minSdkVersion" value="17" />
