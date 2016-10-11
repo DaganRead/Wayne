@@ -8,7 +8,9 @@ function onDeviceReady() {
 };
 document.addEventListener("deviceready", onDeviceReady, false);
 
-document.getElementById('findMe').addEventListener("click", findMe, false);
+document.getElementById('findMe').addEventListener("click", function() {
+    alert();
+}, false);
 
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
