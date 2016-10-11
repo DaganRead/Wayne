@@ -5,7 +5,7 @@
     version     = "1.0.0" >
     <!-- versionCode is optional and Android only -->
 
-    <name>Farm Manager</name>
+    <name>GeoLocation</name>
 
     <description>
       GeoLocation example
