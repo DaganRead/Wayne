@@ -1,6 +1,6 @@
 var app;
 function onDeviceReady() {
-    app.findMe = function() {
+    var findMe = function() {
         alert('Run');
         //navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
     };
@@ -8,8 +8,7 @@ function onDeviceReady() {
 };
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var el = document.getElementsByTagName('input')[0];
-el.addEventListener("click", app.findMe, false);
+document.getElementById('findMe').addEventListener("click", findMe, false);
 
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
