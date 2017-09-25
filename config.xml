@@ -7,7 +7,7 @@
     <author>DaganRead</author>
     <preference name="phonegap-version" value="cli-7.0.1" />
     <!--<preference name="Fullscreen" value="true" /-->
-    <preference name="android-build-tool" value="gradle" />
+    <!-- <preference name="android-build-tool" value="gradle" /> -->
     <platform name="android" >
         <preference name="android-minSdkVersion" value="16" />
         <preference name="android-targetSdkVersion" value="25" />
@@ -17,8 +17,7 @@
     <!-- <allow-navigation href="*" />
     <access origin="*" /> -->
 
-    <!-- We'll include the contacts plugin as an example -->
     <!-- <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" /> -->
     <plugin name="cordova-plugin-geolocation" spec="2.4.3" source="npm" />
-    <plugin name="phonegap-plugin-barcodescanner" spec="6.0.8" source="npm" />
+    <!-- <plugin name="phonegap-plugin-barcodescanner" spec="6.0.8" source="npm" /> -->
 </widget>

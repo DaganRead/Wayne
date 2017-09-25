@@ -37,14 +37,15 @@ var options = {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     };
-
-document.addEventListener("deviceready", function() {
-  /*event listeners*/
+function onDeviceReady() {
     document.getElementById('findMe').addEventListener("click", function() {
-        navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, { timeout: 30000, enableHighAccuracy: true });
+        /*navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError, { timeout: 30000, enableHighAccuracy: true });*/
+        navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
     }, false);
-
     document.getElementById('scanBarCode').addEventListener("click", function() {
         cordova.plugins.barcodeScanner.scan(onScanSuccess, onScanError);
+
     }, false);
-}, false);
+};
+
+document.addEventListener("deviceready", onDeviceReady, false);
