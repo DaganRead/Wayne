@@ -15,19 +15,19 @@
       Dagan Read
     </author>
 
-    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="phonegap-version" value="cli-7.0.1" />
     <!--<preference name="Fullscreen" value="true" /-->
     <platform name="android" >
-        <preference name="android-minSdkVersion" value="17" />
-        <preference name="android-targetSdkVersion" value="19" />
+        <preference name="android-minSdkVersion" value="16" />
+        <preference name="android-targetSdkVersion" value="25" />
         <preference name="orientation" value="portrait" />
     </platform> 
 
-    <allow-navigation href="*" />
-    <access origin="*" />
+    <!-- <allow-navigation href="*" />
+    <access origin="*" /> -->
 
     <!-- We'll include the contacts plugin as an example -->
-    <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" />
+    <!-- <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" /> -->
     <plugin name="cordova-plugin-network-information" spec="1.2.0" source="npm" />
     <plugin name="cordova-plugin-geolocation" spec="1.0.0" source="npm" />
 </widget>

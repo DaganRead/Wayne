@@ -1,10 +1,3 @@
-function onDeviceReady() {
-    document.getElementById('findMe').addEventListener("click", function() {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
-    }, false);
-};
-document.addEventListener("deviceready", onDeviceReady, false);
-
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
@@ -22,3 +15,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+function onDeviceReady() {
+    document.getElementById('findMe').addEventListener("click", function() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+    }, false);
+};
+document.addEventListener("deviceready", onDeviceReady, false);
