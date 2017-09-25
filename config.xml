@@ -20,5 +20,5 @@
     <!-- We'll include the contacts plugin as an example -->
     <!-- <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" /> -->
     <plugin name="cordova-plugin-geolocation" spec="2.4.3" source="npm" />
-    <!-- <plugin name="phonegap-plugin-barcodescanner" spec="6.0.8" source="npm" /> -->
+    <plugin name="phonegap-plugin-barcodescanner" spec="6.0.8" source="npm" />
 </widget>
