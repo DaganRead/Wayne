@@ -2,8 +2,8 @@
 <widget id="com.product.vleisbook" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <!-- versionCode is optional and Android only -->
 
-    <name>GeoLocation</name>
-    <description>Description</description>
+    <name>Farm Manager Tools</name>
+    <description>Farming tools</description>
     <author>DaganRead</author>
     <preference name="phonegap-version" value="cli-7.0.1" />
     <!--<preference name="Fullscreen" value="true" /-->
