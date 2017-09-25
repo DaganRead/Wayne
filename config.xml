@@ -28,6 +28,5 @@
 
     <!-- We'll include the contacts plugin as an example -->
     <!-- <plugin name="cordova-plugin-whitelist" spec="1.2.1" source="npm" /> -->
-    <plugin name="cordova-plugin-network-information" spec="1.2.0" source="npm" />
-    <plugin name="cordova-plugin-geolocation" spec="1.0.0" source="npm" />
+    <plugin name="cordova-plugin-geolocation" spec="2.4.3" source="npm" />
 </widget>
