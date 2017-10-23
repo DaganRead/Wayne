@@ -13,10 +13,10 @@
         <preference name="android-targetSdkVersion" value="25" />
     </platform> 
 
-    <platform name="ios" />
+<!--     <platform name="ios" />
         <preference name="target-device" value="universal" />
         <preference name="deployment-target" value="7.0" />
-    </platform>
+    </platform> -->
 
     <!-- <platform name="winphone" />
         <preference name="windows-appx-target" value="Universal" />
