@@ -1,0 +1,50 @@
+<h2 id="userRole">Select a User Role</h2>
+<section class="levelAuthority">
+    <br/>
+    <input type="radio" id="mentorRadio" ng-model="levelAuthority" value="fan" ng-change="updateLevelAuthority(levelAuthority)">
+    <label for="mentorRadio">
+        <article class="levelAuthority-item mentor-avatar">
+            <figure class="persona-info">
+                <span>Fan</span>
+            </figure>
+        </article>
+        <figcaption>Description of fan user role goes here.</figcaption>
+    </label>
+    <input type="radio" id="creativeRadio" ng-model="levelAuthority" value="artist" ng-change="updateLevelAuthority(levelAuthority)">
+    <label for="creativeRadio">
+        <article class="levelAuthority-item creative-avatar">
+            <figure class="persona-info">
+                <span>Artist</span>
+            </figure>
+        </article>
+        <figcaption>Description of Artist user role goes here.</figcaption>
+    </label>
+</section>
+<section class="getStarted">
+    <!--default-->
+    <h2 ng-if="levelAuthority !== 'fan' && levelAuthority !== 'artist'">Get started on tunebooster:</h2>
+    <span ng-if="levelAuthority !== 'fan' && levelAuthority !== 'artist'">
+        Get in touch with the artists you love?<br/>
+    </span>
+    <!--Client-->
+    <h2 ng-if="levelAuthority === 'fan' && levelAuthority !== 'artist'">Get started on tunebooster:</h2>
+    <span ng-if="levelAuthority === 'fan' && levelAuthority !== 'artist'">
+        Get in touch with the artists you love?<br/>
+    </span>
+	<!--Mentor/Creative-->
+	<h2 ng-if="levelAuthority === 'artist' && levelAuthority !== 'fan'">Join our artist crew and start sharing!</h2>
+	<span ng-if="levelAuthority === 'artist' && levelAuthority !== 'fan'">
+		Upload videos, share your thought and get in touch with your fans.<br/>
+	</span>
+    <article>
+    	<!--Default-->
+    	<input type="button" ng-if="levelAuthority !== 'fan' && levelAuthority !== 'artist'" ng-click="newProjectModalEnterEventHandler()" class="orangeActionButton newProject" value="Join as a fan" />
+    	<input type="button" ng-if="levelAuthority !== 'fan' && levelAuthority !== 'artist'" ng-click="joinTeamModalEnterEventHandler()" class="orangeActionButton joinTeam" value="Join as an artist" />
+    	<!--Client-->
+    	<input type="button" ng-if="levelAuthority === 'fan'" ng-click="newProjectModalEnterEventHandler()" class="orangeActionButton newProject" value="Join as a fan" />
+    	<input type="button" disabled="disabled" ng-if="levelAuthority === 'fan'" ng-click="joinTeamModalEnterEventHandler()" class="orangeActionButton joinTeam" value="Join as an artist" />
+    	<!--Mentor/Creative-->
+    	<input type="button" disabled="disabled" ng-if="levelAuthority === 'artist'" ng-click="newProjectModalEnterEventHandler()" class="orangeActionButton newProject" value="Join as a fan" />
+    	<input type="button" ng-if="levelAuthority === 'artist'" ng-click="joinTeamModalEnterEventHandler()" class="orangeActionButton joinTeam" value="Join as an artist" />
+    </article>
+</section>

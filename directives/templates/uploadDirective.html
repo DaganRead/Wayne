@@ -1,0 +1,119 @@
+<div id="upload-page-media" class="row">
+  <div class="col s12 center-align">
+      <!-- Featured Video Title -->
+      <div class="card light-blue">
+        <div class="card-content white-text">
+          <span class="card-title">Upload media</span>
+        </div>
+      </div><!-- Featured video title  -->
+    </div>
+  <div class="col s12">
+    <div  class="section contentCentered">
+      <div class="row">
+        <ul class="tabs tab-demo-active z-depth-1 cyan" style="width: 100%;">
+          <li class="tab col s4" ng-click="navChange()"><a class="white-text waves-effect waves-light" href="#videos">Video</a></li>
+          <li class="tab col s4" ng-click="navChange()"><a class="white-text waves-effect waves-light" href="#images">Image</a></li>
+          <li class="tab col s4" ng-click="navChange()"><a class="white-text waves-effect waves-light" href="#audio">Audio</a></li>
+          <div class="indicator" style="right: 140px; left: 141px;"></div><div class="indicator" style="right: 140px; left: 141px;"></div>
+        </ul>
+      </div>
+      <div id="videos" class="row" style="display: block;">
+        <h5>Upload a video</h5>
+        <div class="row">
+          <span class="col s6">
+            <div class="input-field">
+              <input type="text" name="title" ng-model="media.title" />
+              <label>Video Title</label>
+            </div>
+            <div class="input-field"> 
+              <textarea ng-model="media.description" name="description" class="materialize-textarea"></textarea>
+              <label>Video Description</label>
+            </div>
+            <div class="row">Tags</div>
+            <div isteven-multi-select input-model="categories" output-model="media.tags" button-label="name" item-label="name" max-labels="3" tick-property="ticked" orientation="horizontal"></div>
+            <input type="hidden" value="{{media.tags}}" name="tags"/>
+            <br />
+          </span>
+          <span class="col s6">
+            <form action="/upload" class="col s12" id="upload-form2" enctype="multipart/form-data" method="post">
+                <div class="input-field">
+                  <input type="text" name="url" ng-model="media.url" />
+                  <label>Video Url</label>
+                </div>
+                <input type="hidden" value="{{media.description}}" name="description" />
+                <input type="hidden" value="{{media.title}}" name="title"/>
+                <input type="hidden" value="{{media.tags}}" name="tags"/>
+            </form>
+            <form action="/upload" class="col s12" id="upload-form" enctype="multipart/form-data" method="post">
+                <div class="col s12 m8 l9" ng-show="media.url==''">
+                  <input name="my_file" ng-model="media.file" type="file" class="dropify"/>
+                </div>
+                <input type="hidden" value="{{media.description}}" name="description" />
+                <input type="hidden" value="{{media.title}}" name="title"/>
+                <input type="hidden" value="{{media.tags}}" name="tags"/>
+            </form>
+          </span>
+        </div>
+          <div class="row">
+            <button ng-click="saveFile()" ng-show="media.url==''" ng-class="{disabled : media.title =='', disabled : media.tags.length ==0}" class="btn waves-effect waves-light ">Save</button>
+            <button ng-click="saveUrl()" ng-show="media.url!=''" ng-class="{disabled : media.title =='', disabled : media.tags.length ==0, disabled : media.url==''}" class="btn waves-effect waves-light ">Save</button>
+          </div>
+      </div>
+      <div id="images" class="row" style="display: none;">
+        <h5>Upload an image</h5>
+        <div class="row">
+          <span class="col s6">
+            <div class="input-field">
+              <input type="text" ng-model="media.title" />
+              <label>Image Title</label>
+            </div>
+
+            <div class="input-field"> 
+              <textarea ng-model="media.description" class="materialize-textarea"></textarea>
+              <label>Image Description</label>
+            </div>
+          </span>
+          <span class="col s6">
+            <div class="col s12 m8 l9">
+              <input id="uploadImage" type="file" class="dropify" data-max-file-size-preview="3M" />
+            </div>
+          </span>
+        </div>
+        <div class="row">
+          <button ng-click="save('image/jpeg')" ng-show="showSaveBtn" class="btn waves-effect waves-light ">Save</button>
+          <button disabled="true" ng-show="!showSaveBtn" class="btn waves-effect waves-light ">Save</button>
+        </div>
+        <div class="row">
+          <span class="errorPopUp" ng-show="displayError"> Image file is larger than 3mb or the wrong format.</span>
+        </div>
+      </div>
+      <div id="audio" class="row" style="display: none;">
+        <h5>Upload a song</h5>
+        <div class="row">
+          <span class="col s6">
+            <div class="input-field">
+              <input type="text" ng-model="media.title" />
+              <label>Song Title</label>
+            </div>
+            <div class="input-field"> 
+              <textarea ng-model="media.description" class="materialize-textarea"></textarea>
+              <label>Song Description</label>
+            </div>
+          </span>
+          <span class="col s6">
+            <div class="col s12 m8 l9">
+              <input id="uploadAudio" type="file" class="dropify" data-max-file-size-preview="10M" />
+            </div>
+          </span>
+        </div>
+        <div class="row">
+          <button ng-click="save('audio/ogg')" ng-show="showSaveBtn" class="btn waves-effect waves-light ">Save</button>
+          <button disabled="true" ng-show="!showSaveBtn" class="btn waves-effect waves-light ">Save</button>
+        </div>
+        <div class="row">
+          <span class="errorPopUp" ng-show="displayError"> Audio file is larger than 5mb or the wrong format.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+body {
+	margin: 25px;
+}
+
+.classlist {
+	font-size: 1.5em;
+}
+
+.classlistrow {
+	padding: 2px;
+	
+}
+
+.logotop {
+	float:right;
+	padding: 50px;
+}
+
+.logotop img {
+	width: 100%;
+}
+
+
+.policy { font-size: 0.6em; color: #666; margin-top: 1em; }
+
+
+h1 { margin: 0;
+padding: 0;}
+
+.classinfo {
+	padding-bottom:  10em;
+}
+
+.studentcount {
+	width: 1.5em;
+	color: #aaa;
+	font-weight: 700;
+	
+	text-align: right; 
+	padding: 0 ;
+	float: left;
+}
+
+.studentnumber {
+	width: 3em;
+	color: black;
+	font-weight: 400;
+	
+	text-align: right; 
+	padding: 0 ;
+	float: left;	
+	margin-left: 1em;
+}
+
+.studentname {
+	padding: 0 ;
+	border-bottom: 2px solid #eee;
+	width: 100% - 8em;
+	margin-left: 6.5em;
+}
+
+.titles .studentname { border: none;}
+
+.tickbox {
+	width: 1em;
+	height: 1em;
+	border: 2px solid #ccc;
+	float:left;
+	margin-right: 0.2em;
+	text-align: center;
+	cursor: pointer;
+	font-size: 0.8em;
+	padding: 0.125em;
+}
+
+.titles .tickbox { border: none;}
+
+.notebox {
+	margin-left: 6em;
+	margin-right: 0.5em;
+	border: none;
+	height: 1em;
+	width: 100% - 7em;
+	font-size: 1em;
+	padding: 0;
+	color: #059;
+}
+
+.titles .notebox { border: none;}
+
+.present {
+	margin-left: 0.5em;
+}
+
+.notebox input {
+	background: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	border: 2px solid #ccc;
+	font-size: 1em;
+	width: 100%;
+	margin-top: -1em;
+}
+
+.title {
+	font-size: 0.5em;
+	text-align: left;
+	color: #aaa;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.vertical {
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+
+.vtitle {
+	width: 1em;
+	margin-left: 0.7em;
+	margin-top: 0.5em;
+	float:left;
+	text-align: center;
+	font-size: 0.8em;
+}

@@ -1,10 +1,116 @@
 <!doctype html>
-<html>
-  <head>
-   <title>title</title>
-  <body>
-  	<iframe width="100%" style="position: absolute; height: 100%; border: none;overflow: hidden;top: 0;left: 0;" seamless src="https://www.tunebooster.com/landingPage">
-   <p>Your browser does not support iframes.</p>
- </iframe>
-  </body>
+<html lang="en" ng-app="app">
+<head>
+	<!-- <script src="/lib/pace.min.js"></script>
+ 	<link href="/css/pace.css" rel="stylesheet" /> -->
+ 	<meta charset="utf-8">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0">
+	<meta name="description" content="Home of virtual busking.">
+	<meta name="author" content="Dagan Read">
+	<base href="/">
+	<title>Tunebooster</title>
+
+<!-- 	<link rel="icon" sizes="196x196" href="/iconbig.png">
+	<link rel="icon" sizes="128x128" href="/iconmedium.png">
+	<link rel="apple-touch-icon" sizes="128x128" href="/iconmedium.png">
+	<link rel="apple-touch-icon-precomposed" sizes="128x128" href="/iconmedium.png"> -->
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="css/pc.css" />
+	<!-- CSS media query on a link element -->
+ 	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+<!-- 	<link rel="stylesheet" media="(max-width: 500px)" href="css/mobile.css" />
+	<link rel="stylesheet" media="(min-width: 500px) and (max-width: 1200px)" href="css/tablet.css" /> -->
+	<!--<link rel="stylesheet" media="(min-width: 1200px)" href="css/pc.css" />-->
+
+	<!-- Libraries -->
+	<!-- <link rel="stylesheet" href="css/plugin.css"/> -->
+	<link rel="stylesheet" href="css/materialize.min.css"/>
+	<link rel="stylesheet" href="css/datetimepicker.css"/>
+	<link rel="stylesheet" href="css/ui-cropper.css"/>
+	<link rel="stylesheet" href="css/dropify.min.css"/>
+	<link rel="stylesheet" href="css/isteven-multi-select.css"/>
+
+	<!-- To be depricated -->
+	<!-- <script src="js/jquery-3.1.1.min.js"></script> -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+	<!--App Logic-->
+	<script src="js/arrayFindPolyfill.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/angular-materialize.min.js"></script>
+	<script src="js/datetimepicker.js"></script>
+	<script src="js/jquery.transloadit2-v3-latest.js"></script>
+	<script src="js/ui-cropper.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/main.js"></script>
+	<script src="factories/socket.js"></script>
+	<script src="factories/upload.js"></script>
+	<script src="factories/ms.js"></script>
+	<script src="factories/utils.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-sanitize.min.js"></script>
+	<script src="tinymce/tinymce.js"></script>
+	<script src="angular-ui-tinymce/tinymce.js"></script>
+	<script src="js/checklist-model.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/scrypt.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/client.min.js"></script>
+	<script src="js/ng-videosharing-embed.min.js"></script>
+	<script src="js/isteven-multi-select.js"></script>
+	<script src="js/angular-facebook.min.js"></script>
+	<script src="js/ng-google-signin.min.js"></script>
+	<script src="js/scrollglue.js"></script>
+	<script src="js/dropify.min.js"></script>
+	
+	<script src="controllers/controllers.js"></script>
+
+	<script src="directives/modalWindowDirective.js"></script>
+	<script src="directives/chatModalWindowDirective.js"></script>
+	<script src="directives/topNavDirective.js"></script>
+	<script src="directives/bannerDirective.js"></script>
+	<script src="directives/commentBoxDirective.js"></script>
+	<script src="directives/processDirective.js"></script>
+	<script src="directives/testimonialDirective.js"></script>
+	<script src="directives/profileDirective.js"></script>
+	<script src="directives/profileOtherDirective.js"></script>
+	<script src="directives/accountDirective.js"></script>
+	<script src="directives/peopleDirective.js"></script>
+	<script src="directives/walletDirective.js"></script>
+	<script src="directives/wallDirective.js"></script>
+	<script src="directives/CMSLandingDirective.js"></script>
+	<script src="directives/cmsFooterDirective.js"></script> 
+	<script src="directives/mediaDirective.js"></script> 
+	<script src="directives/uploadDirective.js"></script> 
+	<script src="directives/playlistDirective.js"></script> 
+	<script src="directives/messageTimeDirective.js"></script>  
+	<script src="directives/timeStampDirective.js"></script> 
+	<script src="directives/timeAgoDirective.js"></script>  
+	<script src="directives/floatingVideoDirective.js"></script> 
+	<script src="directives/exploreDirective.js"></script>
+	<script src="directives/howItWorksDirective.js"></script> 
+	<script src="directives/termsAndConditionsDirective.js"></script> 
+	<script src="directives/privacyPolicyDirective.js"></script> 
+	<script src="directives/questionsAndAnswersDirective.js"></script> 
+	<script src="directives/profileHomeDirective.js"></script> 
+	<script src="directives/avatarDirective.js"></script> 
+	<script src="directives/avatarChipDirective.js"></script> 
+
+	<script src="js/plugins.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/CustomTooltip.js"></script>
+	<script src="js/vis.js"></script>
+	
+</head>
+
+<body>
+	<top-nav></top-nav>
+	<div ng-view class="content"></div>
+	<floating-video ng-controller="dashboard"></floating-video>
+</body>
 </html>

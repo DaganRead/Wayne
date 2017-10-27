@@ -1,0 +1,63 @@
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-1-5">
+                
+				<h3 class="content-subhead">
+                    <a href="/admin"> <i class="fa fa-shield"></i> Admin</a>
+                </h3>
+                <p>
+                    <a href="/admin/users"><i class="fa fa-child"></i> Users</a><br>
+                </p>
+<ul>
+  <li >{{element.name}} </li>
+</ul>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+            <h4>Realtime Status</h4>
+            <div id="realtimestatus">
+                
+            </div>
+
+                <h4>Users</h4>
+                <p data-ng-repeat="user in users">
+                        username: {{ user.username }} <br>
+                        address: {{ user.address }} <br>
+                        companyname: {{ user.companyname }} <br>
+                        email: {{ user.email }} <br>
+                        mobile: {{ user.mobile }} <br>
+                        phonenumber: {{ user.phonenumber }} <br>                        
+                        website: {{ user.website }} <br>
+                        <hr>
+                </p>
+
+                <h4>Problems?</h4>
+                <p>
+                    If for some reason you cannot access your account, please send us an email or call us.
+                </p>
+            </div>
+        </div>
+
+<script>
+
+    socket.on('log', function(data) {
+       // Connected, let's authenticate over sockets.
+       console.log(data)
+       $("#realtimestatus").prepend(data.message + "<br>");
+       //socket.emit('authenticate', {username: user.username, password: user.password });
+    });
+
+	var scrypt = scrypt_module_factory();
+
+	$('#login').submit(function() {
+    // get all the inputs into an array.
+    	// not sure if you wanted this, but I thought I'd add it.
+    	// get an associative array of just the values.
+
+	    //console.log($('#username').val());
+	    //console.log($('#password').val());
+	   	var encrypted = scrypt.crypto_scrypt(scrypt.encode_utf8($('#username').val()), scrypt.encode_utf8($('#password').val()), 16384, 8, 1, 32);
+		console.log(scrypt.to_hex(encrypted))
+		$('#password').val(scrypt.to_hex(encrypted));
+		return 1;
+	});
+</script>

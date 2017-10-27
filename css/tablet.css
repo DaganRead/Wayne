@@ -1,0 +1,23 @@
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+    banner #overlay h2{
+      font-size: large !important;
+    }
+    section[ng-controller=imageCropModalWindow] #saveCrop {
+      width: 90px;
+      margin: 3% calc(50% - 45px) 0px;
+    };
+    section[ng-controller=imageCropModalWindow] figure.avatar{
+      display: none;
+    }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+    banner #overlay h2{
+      font-size: large !important;
+    }
+}
+

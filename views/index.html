@@ -1,0 +1,128 @@
+        <h2 class="content-head is-center">Welcome {{ username }}</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Get Started Quickly
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Responsive Layouts
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i>
+                    Modular
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    Plays Nice
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+        </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img class="pure-img-responsive" alt="File Icons" width="300" src="/img/common/file-icons.png">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <h2 class="content-head is-center">Quick signup or login</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form action="/" class="pure-form pure-form-stacked" method="post">
+                    <fieldset>
+
+                        <label for="name">Username</label>
+                        <input id="username" type="text" name="username" placeholder="Your Username">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" name="email" placeholder="Your Email">
+
+                        <label for="password">Your Password</label>
+                        <input id="password" type="password" name="password" placeholder="Your Password">
+
+                        <button type="submit" class="pure-button" value="Submit">Sign Up or Login</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>How this works</h4>
+                <p>
+                    We need you to signup so we can process your requests and contact you. Please make sure the email you provide is correct.
+                </p>
+
+                <h4>Problems?</h4>
+                <p>
+                    If for some reason you cannot access your account, please send us an email or call us.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer l-box is-center">
+		    <ul class="footer-widget">
+							<li id="text-6" class="widget widget_text"><h4 class="widget-title">Contact Us</h4>			<div class="textwidget"><p>Tel: +27 (12) 648 9200<br>
+		Fax: +27 (12) 665 0253</p>
+		<p>Email:<br>
+		<a href="mailto:k@launchlabapp.com">info@launchlabapp.com</a></p>
+		<p>John Vorster Drive Ext. East<br>
+		Southdowns, Irene</p>
+		</div>
+				</li>
+		</ul>
+    </div>
+
+
+<script>
+	var scrypt = scrypt_module_factory();
+
+	$('#login').submit(function() {
+    // get all the inputs into an array.
+    	// not sure if you wanted this, but I thought I'd add it.
+    	// get an associative array of just the values.
+
+	    //console.log($('#username').val());
+	    //console.log($('#password').val());
+	   	var encrypted = scrypt.crypto_scrypt(scrypt.encode_utf8($('#username').val()), scrypt.encode_utf8($('#password').val()), 16384, 8, 1, 32);
+		console.log(scrypt.to_hex(encrypted))
+		$('#password').val(scrypt.to_hex(encrypted));
+		return 1;
+	});
+</script>

@@ -1,0 +1,39 @@
+<input type="checkbox" id="chatControl" ng-model="chatControl" />
+<section class="tabs" ng-class="{hideChat: chatControl}">
+    <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+    <label for="tab-1" class="tab-label-1">Client|Mentor</label>
+
+    <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+    <label for="tab-2" class="tab-label-2">Mentor|Creative</label>
+
+    <div class="clear-shadow"></div>
+
+    <div class="content">
+        <div class="content-1">
+            <p>Chat between client and mentor</p>
+        </div>
+        <div class="content-2">
+            <section id="chatContainer">
+                <section id="message" ng-repeat="message in project.chat track by $index">
+                    <article ng-if="message.type === 'image/jpeg' || message.type === 'image/png'" >
+                        <figure id="avatar"><img ng-src="{{message.sender.avatar}}" /></figure>
+                        <figure id="fileThumbnail" ng-style="{'background': 'url(../uploads/{{message.body}})' }" ></figure>
+                    </article>
+                    <article ng-if="message.type === 'text'">
+                        <figure id="avatar"><img ng-src="{{message.sender.avatar}}" /></figure>
+                        <p>{{message.body}}</p>
+                    </article>  
+
+                </section>
+            </section>
+            <br/>
+            <controls>
+                    <label id="projectDropZone" for="projectDrop">
+                    </label>
+                    <input id="projectDrop" type="file" class="hide" />
+                <input type="text" placeholder="Chat..." ng-model="chatInput"/>
+                <span id="sendChat" ng-click="sendChat()">Send</span>
+            </controls>
+        </div>
+    </div>
+</section>

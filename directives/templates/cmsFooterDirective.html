@@ -1,0 +1,18 @@
+<footer>
+	<article>
+		<h3>Disclaimer</h3>
+		<p>Content provided on this website is of the subscriber's own behalf and may not represent the opinions of Tunebooster or it's staff.<br /><br />Tunebooster does not own copyright to any of it's member's video or music and is of the artist's concern to ensure that they own the legal rights to distribution of any material displayed on this website.</p><br />
+		<a ng-click="goTo('terms-and-conditions')">Terms and Conditions</a>&nbsp;&nbsp;<a ng-click="goTo('privacy-policy')">Privacy Policy</a>&nbsp;&nbsp;<a  ng-click="goTo('questions-and-answers')">Questions and Answers</a>
+	</article>
+	<article>
+		<form class="contactForm" ng-submit="submit()" ng-controller="contactForm">
+			<h1>? Ask a Question</h1>
+			 <label for="emailName">Name:</label><label for="emailAddress">Email:</label><br /><input type="text" ng-model="newMail.name" id="emailName" placeholder="Name"/>
+			 <input type="email" ng-model="newMail.email" id="emailAddress" placeholder="Email Address"/> <br/>
+			 <label for="emailSubject">Subject:</label> <br /><input type="text" ng-model="newMail.subject" id="emailSubject" placeholder="Ask a question"/> <br/>
+			 <label for="emailText">Text:</label><br/>
+			 <textarea  ng-model="newMail.text" id="emailText" placeholder="Query..."></textarea>
+			 <br/> <input type="submit" value="Submit"/>
+		</form>
+	</article>
+</footer>

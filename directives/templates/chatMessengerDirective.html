@@ -1,0 +1,83 @@
+<section id="messenger">
+	<span class="col s3" id="contacts">
+		<aside>
+			<input type="text" id="searchContactsText" ng-model="searchContacts" placeholder="Search" />
+		</aside>
+		<span class="contact" ng-click="updateMessageBox(conversation)" ng-repeat="conversation in user.messages|filter:{user:searchContacts}|orderBy:'id':true" >
+			<avatar-chip person="conversation.user"></avatar-chip>
+		</span>
+	</span>
+	<span class="col s9" id="messageBox" scroll-glue>
+		<input type="button" id="chatMessengerClose" class="right" ng-click="chatClose()" value="X" />
+        <!-- profile-page-wall-posts -->
+        <div id="profile-page-wall-posts" class="row">
+          	<div class="col s12">
+              	<!-- medium -->
+              	<div class="row" ng-repeat="message in selectedConversation.messages | orderBy:'id':false">
+	              	<div id="profile-page-wall-post" class="card col s10" ng-class='{"right":message.from == user.username}'>
+		              	<div class="card-profile-title">
+		                  <div class="row">
+		                    <div class="col s1" ng-if="message.from != user.username">
+		                      <avatar person="message.from"></avatar>                       
+		                    </div>
+		                    <div class="col s11" ng-if="message.from != user.username">
+		                      <p class="grey-text text-darken-4 margin">{{message.from}}</p>
+		                      <span class="grey-text text-darken-1 ultra-small">Said privately  -  <time-stamp class="messageTime" momenttime="message.timestamp"></time-stamp></span>
+		                    </div>
+		                    <div class="col s1 right right-align" ng-if="message.from == user.username">
+		                      <avatar person="message.from"></avatar>                       
+		                    </div>
+		                    <div class="col s11 right right-align" ng-if="message.from == user.username">
+		                      <p class="grey-text text-darken-4 margin">{{user.username}}</p>
+		                      <span class="grey-text text-darken-1 ultra-small"><time-stamp class="messageTime" momenttime="message.timestamp"></time-stamp>  -  Said privately</span>
+		                    </div>
+		                    <div class="col s1 right-align">
+		                      <i class="mdi-navigation-expand-more"></i>
+		                    </div>
+		                  </div>
+		              	</div>
+		            	<div class="card-content">
+							<p>{{message.body}}</p>
+							<span class="row right"><img id="messageSeen" ng-if="message.seen" ng-src="../../images/icon_messageSeen.png" /><img id="messageSeen" ng-if="!message.seen" ng-src="../../images/icon_messageNotSeen.png" /></span><br />
+						</div>                      
+	            	</div>
+	            </div>
+	        </div>                  
+	    </div>
+    	<!--/ profile-page-wall-posts -->
+<!-- 		<span class="message" ng-repeat="message in selectedConversation.messages | orderBy:'id':false">
+			<avatar class="left" person="message.from" ng-if="message.from != user.username"></avatar>
+			<span class="messageText">{{message.body}}</span>
+			<figure class="right" ng-if="message.from == user.username">
+				<img ng-src="{{ user.avatar }}"/>
+			</figure>
+			<img id="messageSeen" ng-if="message.seen" ng-src="../../images/icon_messageSeen.png" />
+			<time-stamp class="messageTime" momenttime="message.timestamp"></time-stamp>
+		</span>
+		<div class="input-field" id="newMessage" ng-show="selectedConversation.user!=false">
+			<input type="text" ng-model="newMessage" placeholder="Type a message" />
+	        <label>Message</label>
+	    </div>
+		<button id="sendMessage" ng-show="selectedConversation.user!=false" ng-click="sendMessage()" class="btn waves-effect waves-light ">Send
+        	<i class="mdi-content-send right"></i>
+        </button>-->
+        <div class="section chat col s9 grey lighten-4">
+			<div class="row">
+				<div class="col s12">
+					<div class="col s1 avatar">
+						<avatar person="user.username"></avatar>                       
+					</div>
+					<div class="input-field col s9" ng-show="selectedConversation.user!=false">
+						<input type="text" ng-model="newMessage" />
+				        <label>Type a message</label>
+				    </div>
+					<div class="col s2">
+						<button ng-show="selectedConversation.user!=false" ng-click="sendMessage()" class="btn waves-effect waves-light ">Send
+				        	<i class="mdi-content-send right"></i>
+				        </button>                    
+					</div>
+		        </div>
+	        </div>
+	    </div>
+	</span>
+</section>  

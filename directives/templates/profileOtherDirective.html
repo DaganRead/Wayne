@@ -1,0 +1,303 @@
+<section>
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img alt="user background" class="activator" ng-src="{{ otherUser.banner }}" />
+    </div>
+    <button id="becomeFan" class="btn waves-effect waves-light deep-orange right" ng-show="otherUser.username != user.username" ng-click="befriend(otherUser.username)">Become a fan</button>
+    <figure class="card-profile-image-artist waves-effect waves-light">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ otherUser.avatar }}">
+    </figure>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s2 offset-s1">
+          <h4 class="card-title grey-text text-darken-4">{{ otherUser.username }}</h4>
+          <p class="medium-small grey-text">Artist</p>
+        </div>
+        <div class="col s1 center-align">
+          <h4 class="card-title grey-text text-darken-4">{{ otherUser.people.length }}+</h4>
+          <p class="medium-small grey-text">Fans</p>
+        </div>
+        <div class="col s1 center-align">
+          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <p class="medium-small grey-text">Likes</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">$ {{ otherUser.wallet.total| number:2 }}</h4>
+          <p class="medium-small grey-text">Total Busked</p>
+        </div>
+        <div class="col s3 left-align" ng-if="otherUser.social.website.url != '' || otherUser.social.fb.url != '' || otherUser.social.instagram.url != '' || otherUser.social.twitter.url != '' || otherUser.social.youtube.url != ''">
+          <h4 class="card-title grey-text text-darken-4">
+            <a class="social" class="otherProfileSocialIcon" ng-if="otherUser.social.website.url != ''" target="_blank" ng-href="{{otherUser.social.website.url}}"><img ng-src="../../images/icon_social_w3.png"></a>
+          <a class="social" class="otherProfileSocialIcon" ng-if="otherUser.social.fb.url != ''" target="_blank" ng-href="{{otherUser.social.fb.url}}"><img ng-src="../../images/icon_social_fb.png"></a>
+          <a class="social" class="otherProfileSocialIcon" ng-if="otherUser.social.instagram.url != ''" target="_blank" ng-href="{{otherUser.social.instagram.url}}"><img ng-src="../../images/icon_social_instagram.png"></a>
+          <a class="social" class="otherProfileSocialIcon" ng-if="otherUser.social.twitter.url != ''" target="_blank" ng-href="{{otherUser.social.twitter.url}}"><img ng-src="../../images/icon_social_twitter.png"></a>
+          <a class="social" class="otherProfileSocialIcon" ng-if="otherUser.social.youtube.url != ''" target="_blank" ng-href="{{otherUser.social.youtube.url}}"><img ng-src="../../images/icon_social_youtube.png"></a>
+
+          </h4>
+          <p class="medium-small grey-text">Links</p>
+        </div>
+        <div class="col s2 right">
+          <input id="buskProfileCard" class="btn waves-effect waves-light deep-orange" ng-click="buskProfile($event, otherUser.username)" ng-mouseenter="buskAnim($event)" ng-mouseleave="buskAnim($event)" type="image" ng-src="../../images/buskClosed.png"/> 
+          <audio>
+            <source src="../../images/coins.ogg" type="audio/ogg">
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+      </div>
+    </div>
+  </div><!--/ profile-page-header -->
+    <br/>
+    <!-- profile-page-content-->
+    <div class="row" id="profile-page-content">
+      <!-- profile-page-sidebar-->
+      <div class="col s12 m3" id="profile-page-sidebar">
+        <!-- Profile About  -->
+        <div class="card light-blue">
+          <div class="card-content white-text">
+            <span class="card-title">About {{ otherUser.username }}</span>
+            <p>{{ otherUser.bio }}</p>
+          </div>
+        </div><!-- Profile About  -->
+        <!-- Profile About Details  -->
+        <ul class="collection z-depth-1" id="profile-page-about-details">
+          <li class="collection-item">
+            <div class="row">
+              <div class="col s5 grey-text darken-1">
+                <i class="mdi-action-wallet-travel"></i> Music Pref
+              </div>
+              <div class="col s7 grey-text text-darken-4 right-align">
+                ABC Name
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row">
+              <div class="col s5 grey-text darken-1">
+                <i class="mdi-social-poll"></i> Total videos
+              </div>
+              <div class="col s7 grey-text text-darken-4 right-align">
+                HTML, CSS
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row">
+              <div class="col s5 grey-text darken-1">
+                <i class="mdi-social-domain"></i> Lives in
+              </div>
+              <div class="col s7 grey-text text-darken-4 right-align">
+                NY, USA
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row">
+              <div class="col s5 grey-text darken-1">
+                <i class="mdi-social-cake"></i> Joined date
+              </div>
+              <div class="col s7 grey-text text-darken-4 right-align">
+                18th June, 1991
+              </div>
+            </div>
+          </li>
+        </ul><!--/ Profile About Details  -->
+      </div><!-- profile-page-sidebar-->
+
+      <!-- profile-featured-video-->
+      <div class="col s12 m6" id="profile-page-sidebar">
+        <!-- Featured Video Title -->
+        <div class="card light-blue">
+          <div class="card-content white-text">
+            <span class="card-title">Featured</span>
+          </div>
+        </div><!-- Featured video title  -->
+        
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" ng-src="{{ otherUser.gallery[0].body }}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ otherUser.gallery[0].title }}<span ng-if="otherUser.gallery[0].type === 'video/mp4'" class="right" >Busked: ${{otherUser.gallery[0].buskedTotal| number:2}}</span></span>
+          <p>{{ otherUser.gallery[0].description }}</p><br />
+          <div class="row">
+            <div class="col s12 right-align">
+              <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ otherUser.gallery[0].likes.counter }}</span>
+              <span ng-if="user.authed && user.levelAuthority === 'fan'"><i class="material-icons"><img ng-click="addToPlayList($event, otherUser.gallery[0])" ng-src="../../images/icon_favourite.png"/></i></span>
+              <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+              <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+          <p class="postComments" ng-repeat="comment in otherUser.gallery[0].comments track by $index">
+            <avatar person="comment.username"></avatar>
+            <h2>{{comment.username}}</h2>
+            <p>{{comment.body}}</p>
+          </p>
+        </div>
+      </div>
+            
+      </div><!-- featured video-->
+
+            <!-- profile-page-sidebar-right-->
+      <div class="col s12 m3 right hide-on-med-and-down" id="profile-page-sidebar">
+        <!-- Fan Count  -->
+        <div class="card amber darken-2">
+          <div class="card-content white-text center-align">
+            <p class="card-title"><i class="mdi-social-group-add"></i> {{otherUser.people.length}}</p>
+            <p>Fans</p>
+          </div>
+        </div><!-- Fan Count  -->
+        <!-- Fans list  -->
+        <ul class="collection z-depth-1" id="profile-page-about-feed">
+          <li class="collection-item avatar" ng-repeat="fan in otherUser.people track by $index">
+            <avatar person="fan.username"></avatar><span class="title">{{fan.username}}</span>
+          </li>
+        </ul><!-- Fans list  -->
+      </div><!-- profile-page-sidebar-right-->
+
+    </div><!-- profile-page-content-->
+          <div  class="section">
+            <div class="row">
+              <ul class="tabs tab-demo-active z-depth-1 cyan" style="width: 100%;">
+                <li class="tab col s3"><a class="white-text waves-effect waves-light active" href="#all">All</a></li>
+                <li class="tab col s3"><a class="white-text waves-effect waves-light" href="#videos">Videos</a></li>
+                <li class="tab col s3"><a class="white-text waves-effect waves-light" href="#images">Images</a></li>
+                <li class="tab col s3"><a class="white-text waves-effect waves-light" href="#audio">Audio</a></li>
+                <div class="indicator" style="right: 140px; left: 141px;"></div><div class="indicator" style="right: 140px; left: 141px;"></div>
+              </ul>
+            </div>
+                      <div id="all" class="row" style="display: block;">
+                        <div class="col s4" ng-repeat="item in otherUser.gallery | filter:tagFilter track by $index">
+                            <div class="card col s12">
+                              <div ng-if="item.type === 'video/mp4'" class="card-image waves-effect waves-block waves-light">
+                                <img ng-if="item.thumbnail==undefined" ng-src="{{getThumbUrl(item.body)}}" ng-click="videoSelected(item.body, item.username)"/>
+                                <img ng-if="item.thumbnail!=undefined" ng-src="{{item.thumbnail}}" ng-click="videoSelected(item.body, item.username)"/>                              </div>
+                              <div ng-if="item.type === 'image/jpeg' || item.type === 'image/png'" class="card-image">
+                                <img ng-src="{{ item.body }}" class="materialboxed" data-caption="{{ item.description }}"/>
+                              </div>
+                              <div ng-if="item.type === 'audio/ogg' || item.type === 'audio/mpeg'" class="card-image waves-effect waves-block waves-light">
+                                <img ng-click="playMusic($event)" ng-src="../../images/icon_musicPlay.png"/>
+                                <audio  style="display: none;">
+                                  <source src="{{item.body}}" type="audio/mpeg">
+                                  <source src="{{item.body}}" type="audio/ogg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                              </div>
+                              <div class="card-content">
+                                <span class="card-title grey-text text-darken-4">{{ item.title }}<span ng-if="item.type === 'video/mp4'" class="right" >Busked: ${{item.buskedTotal| number:2}}</span></span>
+                                <p>{{ item.description }}</p><br />
+                                <div class="row">
+                                  <div class="col s12 right-align">
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ item.likes.counter }}</span>
+                                    <span ng-if="user.authed && user.levelAuthority === 'fan' && item.type === 'video/mp4'"><i class="material-icons"><img ng-click="addToPlayList($event, item)" ng-src="../../images/icon_favourite.png"/></i></span>
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+                                    <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+                                <p class="postComments" ng-repeat="comment in item.comments track by $index">
+                                  <avatar person="comment.username"></avatar>
+                                  <h2>{{comment.username}}</h2>
+                                  <p>{{comment.body}}</p>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="videos" class="row" style="display: none;">
+                        <div class="col s4" ng-repeat="item in otherUser.gallery | filter:tagFilter track by $index">
+                            <div ng-if="item.type === 'video/mp4'" class="card col s12">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                <img ng-if="item.thumbnail==undefined" ng-src="{{getThumbUrl(item.body)}}" ng-click="videoSelected(item.body, item.username)"/>
+                                <img ng-if="item.thumbnail!=undefined" ng-src="{{item.thumbnail}}" ng-click="videoSelected(item.body, item.username)"/>                              </div>
+                              <div class="card-content">
+                                <span class="card-title grey-text text-darken-4">{{ item.title }}<span ng-if="item.type === 'video/mp4'" class="right" >Busked: ${{item.buskedTotal| number:2}}</span></span>
+                                <p>{{ item.description }}</p><br />
+                                <div class="row">
+                                  <div class="col s12 right-align">
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ item.likes.counter }}</span>
+                                    <span  ng-if="user.authed && user.levelAuthority === 'fan'"><i class="material-icons"><img ng-click="addToPlayList($event, item)" ng-src="../../images/icon_favourite.png"/></i></span>
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+                                    <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+                                <p class="postComments" ng-repeat="comment in item.comments track by $index">
+                                  <avatar person="comment.username"></avatar>
+                                  <h2>{{comment.username}}</h2>
+                                  <p>{{comment.body}}</p>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="images" class="row" style="display: none;">
+                        <div class="col s4" ng-repeat="item in otherUser.gallery | filter:tagFilter track by $index">
+                            <div ng-if="item.type === 'image/jpeg' || item.type === 'image/png'" class="card col s12">
+                              <div class="card-image">
+                                <img ng-src="{{ item.body }}" class="materialboxed" data-caption="{{ item.description }}"/>
+                              </div>
+                              <div class="card-content">
+                                <span class="card-title grey-text text-darken-4">{{ item.title }}</span>
+                                <p>{{ item.description }}</p><br />
+                                <div class="row">
+                                  <div class="col s12 right-align">
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ item.likes.counter }}</span>
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+                                    <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+                                <p class="postComments" ng-repeat="comment in item.comments track by $index">
+                                  <avatar person="comment.username"></avatar>
+                                  <h2>{{comment.username}}</h2>
+                                  <p>{{comment.body}}</p>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div id="audio" class="row" style="display: none;">
+                        <div class="col s4" ng-repeat="item in otherUser.gallery | filter:tagFilter track by $index">
+                            <div ng-if="item.type === 'audio/ogg' || item.type === 'audio/mpeg'" class="card col s12">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                <img ng-click="playMusic($event)" ng-src="../../images/icon_musicPlay.png"/>
+                                <audio  style="display: none;">
+                                  <source src="{{item.body}}" type="audio/mpeg">
+                                  <source src="{{item.body}}" type="audio/ogg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                              </div>
+                              <div class="card-content">
+                                <span class="card-title grey-text text-darken-4">{{ item.title }}</span>
+                                <p>{{ item.description }}</p><br />
+                                <div class="row">
+                                  <div class="col s12 right-align">
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ item.likes.counter }}</span>
+                                    <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+                                    <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+                                <p class="postComments" ng-repeat="comment in item.comments track by $index">
+                                  <avatar person="comment.username"></avatar>
+                                  <h2>{{comment.username}}</h2>
+                                  <p>{{comment.body}}</p>
+                                </p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+          </div>
+</section>

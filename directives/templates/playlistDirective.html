@@ -1,0 +1,46 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <figure class="card-profile-image-fan center-align" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <h5 class="center-align">{{ user.username }}</h5>
+    <br/><br/><br/><br/>
+    <!-- Featured Video Title -->
+    <div class="card light-blue">
+      <div class="card-content white-text">
+        <span class="card-title">Favourite Videos</span>
+      </div>
+    </div><!-- Featured video title  -->
+    <section class="contentCentered">
+        <img ng-if="playListLoaded === false" class="largeLoading" ng-src="../../images/loading_icon.gif"/>
+        <div class="row">
+          <div class="col s4" ng-repeat="item in playlist track by $index">
+              <div class="card col s12">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img ng-src="{{getThumbUrl(item.body)}}" ng-click="videoSelected(item.body, item.artist)"/>
+                </div>
+                <div class="card-content">
+                  <span class="card-title grey-text text-darken-4">{{ item.title }}<span class="right" >Busked: ${{item.buskedTotal}}</span></span>
+                  <p>{{ item.description }}</p><br />
+                  <div class="row">
+                    <div class="col s12 right-align">
+                      <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ item.likes.counter }}</span>
+                      <span  ng-if="user.authed && user.levelAuthority !== 'fan'"><i class="material-icons"><img ng-click="playlistRemove(item)" ng-src="../../images/icon_favourite.png"/></i></span>
+                      <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+                      <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+                  <p class="postComments" ng-repeat="comment in item.comments track by $index">
+                    <avatar person="comment.username"></avatar>
+                    <h2>{{comment.username}}</h2>
+                    <p>{{comment.body}}</p>
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+</div>

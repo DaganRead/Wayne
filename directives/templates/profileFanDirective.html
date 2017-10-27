@@ -1,0 +1,37 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <figure class="card-profile-image-fan center-align" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div id="avatar_change_btn_fan" class="file-field input-field center-align">
+      <div class="btn-floating">
+        <span><img class="icon_image_upload" ng-src="../../images/icon_image_upload.png" /></span>
+        <input id="avatar_change" type="file">
+      </div>
+    </div>
+    <h5 class="center-align">{{ user.username }}</h5>
+    <br/><br/><br/><br/>
+            <!-- Featured Video Title -->
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">General Settings</span>
+              </div>
+            </div><!-- Featured video title  -->
+            <br />
+    <section class="contentCentered">
+        <span id="musicPref">Music Preferences</span>
+        <div isteven-multi-select input-model="currentMusicPref" output-model="newMusicPref" button-label="name" item-label="name" max-labels="3" tick-property="ticked" orientation="horizontal"></div>
+        <br />
+        <div class="input-field">
+            <input type="text" ng-model="user.location" placeholder="{{ user.location }}" />
+            <label>Location</label>
+        </div>
+        <br/>
+        <div class="input-field"> 
+            <textarea ng-model="user.bio" class="materialize-textarea" placeholder="{{ user.bio }}"></textarea>
+            <label>Bio</label>
+        </div>
+        <br />
+        <button ng-click="submit()" class="btn waves-effect waves-light ">Save</button>
+    </section>
+  </div><!--/ profile-page-header -->

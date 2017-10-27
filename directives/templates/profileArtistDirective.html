@@ -1,0 +1,132 @@
+<section>  
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header" ng-if="user.levelAuthority=='artist'">
+    <div id="banner_drop_zone" class="card-image waves-effect waves-block waves-light">
+      <img alt="user background" class="activator" ng-src="{{ user.banner }}" />
+    </div>
+    <div id="banner_change_btn" class="file-field input-field right">
+      <div class="btn-floating">
+        <span><img class="icon_image_upload" ng-src="../../images/icon_image_upload.png" /></span>
+        <input id="banner_change" type="file">
+      </div>
+    </div>
+    <figure class="card-profile-image-artist" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div id="avatar_change_btn_artist" class="file-field input-field">
+      <div class="btn-floating">
+        <span><img class="icon_image_upload" ng-src="../../images/icon_image_upload.png" /></span>
+        <input id="avatar_change" type="file">
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s3 offset-s2">
+          <h4 class="card-title grey-text text-darken-4">{{ user.username }}</h4>
+          <p class="medium-small grey-text">Artist</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">{{ user.people.length }}+</h4>
+          <p class="medium-small grey-text">Fans</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <p class="medium-small grey-text">Likes</p>
+        </div>
+        <div class="col s2 right-align">
+          <h4 class="card-title grey-text text-darken-4">$ {{ user.wallet.total| number:2 }}</h4>
+          <p class="medium-small grey-text">Total Busked</p>
+        </div>
+      </div>
+    </div>
+    <br/>
+            <!-- Featured Video Title -->
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">General Settings</span>
+              </div>
+            </div><!-- Featured video title  -->
+    <section class="contentCentered">
+      <span id="musicPref">Music Preferences</span>
+      <div isteven-multi-select input-model="currentMusicPref" output-model="newMusicPref" button-label="name" item-label="name" max-labels="3" tick-property="ticked" orientation="horizontal"></div>
+      <br />
+      <div class="input-field">
+          <input type="text" ng-model="user.location" placeholder="{{ user.location }}" />
+          <label>Location</label>
+      </div>
+      <br/>
+      <div class="input-field">
+          <textarea ng-model="user.bio" class="materialize-textarea" placeholder="{{ user.bio }}"></textarea>
+          <label>Bio</label>
+      </div>
+      <br/>
+      <span>Social Details</span>
+      <hr />    
+      <br/>
+      <div class="input-field">
+          <input type="text" ng-model="user.social.website.url" placeholder="{{ user.social.website.url }}" />
+          <label>Website</label>
+      </div>
+      <br/>
+      <div class="input-field">
+          <input type="text" ng-model="user.social.fb.url" placeholder="{{ user.social.fb.url }}" />
+          <label>Facebook</label>
+      </div>
+      <br/>
+      <div class="input-field">
+          <input type="text" ng-model="user.social.instagram.url" placeholder="{{ user.social.instagram.url }}" />
+          <label>Instagram</label>
+      </div>
+      <br/>
+      <div class="input-field">
+          <input type="text" ng-model="user.social.twitter.url" placeholder="{{ user.social.twitter.url }}" />
+          <label>Twitter</label>
+      </div>
+      <br/>
+      <div class="input-field">
+          <input type="text" ng-model="user.social.youtube.url" placeholder="{{ user.social.youtube.url }}" />
+          <label>Youtube</label>
+      </div>
+      <br/>
+      <button ng-click="submit()" class="btn waves-effect waves-light ">Save</button>
+    </section>
+  </div><!--/ profile-page-header -->
+
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header" ng-if="user.levelAuthority=='fan'>
+    <figure class="card-profile-image-fan center-align" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div id="avatar_change_btn_fan" class="file-field input-field center-align">
+      <div class="btn-floating">
+        <span><img class="icon_image_upload" ng-src="../../images/icon_image_upload.png" /></span>
+        <input id="avatar_change" type="file">
+      </div>
+    </div>
+    <h5 class="center-align">{{ user.username }}</h5>
+    <br/><br/><br/><br/>
+            <!-- Featured Video Title -->
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">General Settings</span>
+              </div>
+            </div><!-- Featured video title  -->
+            <br />
+    <section class="contentCentered">
+        <span id="musicPref">Music Preferences</span>
+        <div isteven-multi-select input-model="currentMusicPref" output-model="newMusicPref" button-label="name" item-label="name" max-labels="3" tick-property="ticked" orientation="horizontal"></div>
+        <br />
+        <div class="input-field">
+            <input type="text" ng-model="user.location" placeholder="{{ user.location }}" />
+            <label>Location</label>
+        </div>
+        <br/>
+        <div class="input-field"> 
+            <textarea ng-model="user.bio" class="materialize-textarea" placeholder="{{ user.bio }}"></textarea>
+            <label>Bio</label>
+        </div>
+        <br />
+        <button ng-click="submit()" class="btn waves-effect waves-light ">Save</button>
+    </section>
+  </div><!--/ profile-page-header -->
+</section>

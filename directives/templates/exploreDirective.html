@@ -1,0 +1,139 @@
+<div class="row" id="featured-page-content">
+  <div class="row grey lighten-2">
+      <!-- Featured-page-sidebar-featuredArtists-->
+      <div class="col s12 m3" id="featured-page-sidebar">
+        <!-- Fans list  -->
+        <ul class="collection z-depth-1" id="profile-page-about-feed">
+          <li class="collection-item avatar" ng-repeat="artist in featuredArtists track by $index" ng-click="selectFeaturedArtist(artist)"> 
+            <avatar person="artist.username"></avatar> <span class="title">{{artist.username}}</span>
+          </li>
+        </ul>
+        <!-- Fans list  -->
+      </div>
+      <!-- profile-page-sidebar-->
+
+      <!-- featured-video-->
+      <div class="col s12 m6" id="featured-page-sidebar">
+        <!-- Featured Video Title -->
+        <div class="card light-blue">
+          <div class="card-content white-text">
+            <span class="card-title">Featured</span>
+          </div>
+        </div>
+        <!-- Featured video title  -->
+        <div class="card" ng-if="featuredVideos.length > 0">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img ng-src="{{getThumbUrl(featuredArtistSelectedVideo.body)}}" ng-click="videoSelected(featuredArtistSelectedVideo)" />
+        </div>
+        <div class="card-content">
+          <span class="card-title grey-text text-darken-4">{{ featuredArtistSelectedVideo.title }}<span class="right" ng-if="featuredArtistSelectedVideo.type === 'video/mp4'" >Busked: $ {{featuredArtistSelectedVideo.buskedTotal| number:2}}</span></span>
+          <p>{{ featuredArtistSelectedVideo.description }}</p><br />
+          <div class="row">
+            <div class="col s12 right-align">
+              <span><i class="material-icons"><img ng-src="../../images/icon_heart.png"/></i>{{ featuredArtistSelectedVideo.likes.counter }}</span>
+              <span><i class="material-icons"><img ng-if="user.authed && user.levelAuthority === 'fan'" ng-src="../../images/icon_favourite.png"/></i></span>
+              <span><i class="material-icons"><img ng-src="../../images/icon_share.png" /></i></span>
+              <span><i class="material-icons"><img class="activator" ng-src="../../images/icon_comments.png"/></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span>
+          <p class="postComments" ng-repeat="comment in featuredArtistSelectedVideo.comments track by $index">
+            <avatar person="comment.username"></avatar>
+            <h2>{{comment.username}}</h2>
+            <p>{{comment.body}}</p>
+          </p>
+        </div>
+      </div>            
+      </div>
+      <!-- featured-video-->
+
+     <!-- featured-page-sidebar-right artistVideos -->
+      <div class="col s12 m3 right hide-on-med-and-down" id="featured-page-sidebar">
+          <div class="card horizontal" ng-repeat="media in featuredArtistSelected.gallery track by $index" ng-click="selectFeaturedArtistVideo(media)">
+            <div class="card-image">
+              <img ng-src="{{getThumbUrl(media.body)}}">
+            </div>
+            <span class="card-title">{{media.title}}</span>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>{{media.description}}</p>
+              </div>
+            </div>
+          </div>            
+      </div>
+      <!-- featured-page-sidebar-right--> 
+  </div>
+      <div class="col s12">
+<!--             
+          <div class="row">
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">Featured Videos</span>
+              </div>
+            </div>
+          </div>
+            <br />   
+        <div class="row">
+            <div class="col s4" ng-repeat="video in featuredVideos">
+      				<div class="card col s12">
+      					<div ng-click="videoSelected(video, 'Admin')" class="card-image waves-effect waves-block waves-light">
+      						<img class="videoThumbnail" ng-src="{{getThumbUrl(video)}}" />
+      					</div>
+      					<div class="card-content">
+      						<span ng-click="exploreProfile(item.username)" class="card-title grey-text text-darken-4">{{item.username}}</span>
+      					</div>
+      				</div>
+            </div>
+        </div> -->
+            <!-- Featured Video Title -->
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">Artists' Video Uploads</span>
+              </div>
+            </div><!-- Featured video title  -->
+            <br />
+        <div class="input-field col s12">
+            <input type="text" ng-model="featuredFilter" placeholder="Search for videos by artist name, title or description." />
+            <label>Search for videos by artist name, title or description.</label>
+        </div>
+		<div class="s12">
+            <div class="row">
+				<ul class="tabs z-depth-1 cyan" style="width: 100%;">
+					<li class="tab s3" ng-click='filterUpdate("All")'><a class="white-text waves-effect waves-light active" href="#all">All</a></li>
+					<li class="tab s3"  ng-click='filterUpdate(category)' ng-repeat="category in categories track by $index"><a class="white-text waves-effect waves-light">{{category}}</a></li>
+					<div class="indicator" style="right: 140px; left: 141px;"></div><div class="indicator" style="right: 140px; left: 141px;"></div>
+				</ul>
+			</div>
+        </div>
+        <div class="row">
+            <div class="col s4" ng-repeat="item in videos | filter:featuredFilter | startFrom:currentPage*pageSize | limitTo:pageSize">
+				<div class="card col s12">
+					<div ng-click="videoSelected(item.body, item.username)" class="card-image waves-effect waves-block waves-light">
+						<img ng-src="{{getThumbUrl(item.body)}}"/>
+					</div>
+					<div class="card-content">
+						<span ng-click="exploreProfile(item.username)" class="card-title grey-text text-darken-4">{{item.username}}</span>
+						<!-- <p>{{ otherUser.gallery[0].description }}</p>-->
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="contentCentered">
+			<ul class="pagination">
+				<li class="waves-effect">
+					<button class="btn" ng-disabled="currentPage == 0" ng-click="pageBack()">
+						<i class="mdi-navigation-chevron-left"><</i>
+					</button>
+				</li>
+				<li class="waves-effect" ng-repeat="page in pagin track by $index" ng-class="{active:page==currentPage}" ><a>{{page}}</a></li>
+				<li class="waves-effect">
+					<button  class="btn" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="pageForward()">
+						<i class="mdi-navigation-chevron-right">></i>
+					</button>
+				</li>
+			</ul>
+		</div>
+    </div>
+</section>

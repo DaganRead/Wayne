@@ -1,0 +1,2165 @@
+/*
+* Individual Components CSS
+*******************************************************/
+/*
+* Menu
+*/
+section#floatingVideo{
+  position: fixed;
+  top: 100%;  
+  z-index: 2200;
+  height: 270px;
+  left: calc(100% - 500px);
+}
+section#floatingVideo iframe{
+  top: -5px;
+  position: absolute;
+}
+/*section.fv-show iframe{
+  top: 100% !important;
+}*/
+section.fv-show{
+  top: calc(100% - 270px) !important;
+}
+#floatingVideo nav{
+  position: fixed;
+  top: calc(100% - 25px);
+  color: white;
+  z-index: 2;
+  width: 500px;
+  background-color: #ae1023;
+  padding: 2px;
+  height: 25px;
+  line-height: 25px;
+}
+span.floatingBusk input{
+  top: -37px !important;
+  position: relative !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  left: -80px !important;
+  width: 100px !important;
+  float: none !important;
+}
+/*
+* Menu
+*/
+div#artistMenu span{
+  color: white;
+}
+div#fanMenu span{
+  color: white;  
+}
+div#artistMenu span img{
+  vertical-align: middle;
+}
+div#fanMenu span img{
+  vertical-align: middle;  
+}
+span#profileMenuDropbtn{
+  display: inline-block;
+  float: right;
+  margin: 15px 50px 0px 0px;
+}
+span#profileMenuDropbtn figure{
+    cursor: pointer;
+    width: 30px !important;
+    border-radius: 50%;
+    position: relative;
+    padding-bottom: 30px !important;
+    margin: 8px !important;
+    display: inline-block !important;
+    vertical-align: middle;
+}
+span#profileMenuDropbtn figure img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+span#messagesMenuDropbtn{
+  display: inline-block;
+  float: right;
+  margin: 15px 5px 0px 0px;
+}
+span#notificationsMenuDropbtn{
+  display: inline-block;
+  float: right;
+  margin: 15px 5px 0px 0px;
+}
+span#messagesMenuDropbtn span{
+  margin-top: 14px !important;
+}
+span#notificationsMenuDropbtn span{
+  margin-top: 14px !important;
+}
+ul#profileMenuDrop{
+  top: 45px;
+  left: calc(100% - 160px);
+  width: 155px;
+}
+ul#profileMenuDrop li img{
+  vertical-align: middle;
+}
+ul.profileMenuHide{
+  display: block !important;
+  opacity: 1 !important;
+}
+ul#messagesMenuDrop{
+  top: 45px;
+  left: calc(100% - 486px);
+  width: 480px;
+}
+ul#messagesMenuDrop.messagesMenuHide{
+  display: inline-block !important;
+  opacity: 1 !important; 
+}
+ul#notificationsMenuDrop{
+  top: 45px;
+  left: calc(100% - 486px);
+  width: 480px;
+}
+ul#notificationsMenuDrop.notificationsMenuHide{
+  display: inline-block !important;
+  opacity: 1 !important; 
+}
+ul#notificationsMenuDrop li, ul#messagesMenuDrop li{
+  cursor: pointer;
+}
+ul#messagesMenuDrop li p{
+  width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; 
+}
+ul#messagesMenuDrop li figure.messageCenterAvatar {
+  display: inline-block;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  padding-bottom: 50px;
+  vertical-align: middle;
+  margin: 8px !important;
+}
+ul#messagesMenuDrop li figure.messageCenterAvatar img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+ul#messagesMenuDrop li figure#avatar, ul#notificationsMenuDrop li figure#avatar{
+  width: 80%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+}
+ul#messagesMenuDrop li figure#avatar img, ul#notificationsMenuDrop li figure#avatar img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+/*
+* Services
+*/
+section.services{
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.21);
+  height: 355px;
+  padding: 0px 10% 0px;
+}
+section.services h2{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: Gotham-Bold;
+  font-size: x-large;
+  text-align: center;
+  color: #555;
+  padding: 50px 0px 58px;
+}
+section.services article{
+  float: left;
+  position: relative;
+  width: 20%;
+  margin: 0px 2.5%;
+}
+section.services article figure{
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: 20%;
+  width: 100%;
+}
+section.services article#identity figure{
+  background-image: url("../images/identity_icon.svg");
+}
+section.services article#interactive figure{
+  background-image: url("../images/interactive_icon.svg");
+}
+section.services article#print figure{
+  background-image: url("../images/print_icon.svg");
+}
+section.services article#photoFilm figure{
+  background-image: url("../images/photoFilm_icon.svg");
+}
+section.services article span{
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: Gotham-Book-Italic,sans-serif;
+  font-size: medium;
+  color: #555;
+  text-align: center;
+  line-height: 18px;
+}
+section.services article figcaption{
+  color: #d35b32;
+  font-size: large;
+  padding: 15px 10px 5px 10px;
+  font-family: Gotham-Bold, sans-serif;
+  text-align: center;
+}
+/*
+* Get Started
+*/
+section.getStarted{
+  width: 80%;
+  background-color: rgba(0,0,0,0.2);
+  height: 320px;
+  padding: 0px 10% 0px;
+}
+section.getStarted h2{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: Gotham-Bold;
+  font-size: x-large;
+  text-align: center;
+  color: #555;
+  padding: 50px 0px 58px;
+}
+section.getStarted span{
+  display: block;
+  width: 100%;
+  font-family: Gotham-Book-Italic;
+  font-size: medium;
+  text-align: center;
+  color: #555;
+  padding: 0px 0px 50px;
+  line-height: 23px;
+}
+section.getStarted article {
+  display: block;
+    width: 20%;
+    margin: auto;
+    min-width: 400px;
+}
+section.getStarted article input.newProject {
+    position: relative;
+    float: left;
+}
+section.getStarted article input.joinTeam {
+    position: relative;
+    float: right;
+}
+/*
+* Process
+*/
+process #userRole{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: Gotham-Bold;
+  font-size: x-large;
+  text-align: center;
+  color: #FFF;
+  padding: 50px 0px 58px;
+}
+process label {
+    position: absolute;
+    margin-top: -30px;
+    color:white;
+}
+
+process label[for*="Radio"] {
+    margin-top: 0px;
+}
+
+process input[type=radio] {
+  display: none;
+  width:60px;
+}
+process .levelAuthority{
+  height: 600px;
+  width: 600px;
+  position: relative;
+  margin: 0px auto -250px;
+}
+process label[for*="Radio"]{
+  text-align: center;
+  height: inherit;
+  width: 33.3333%;
+  position: absolute;
+  transition: all 0.3s ease 0.2s;
+}
+
+process article.levelAuthority-item {
+  width: 69%;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  background-color: #EF5A28;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0px 15.5%;
+  height: 23%;
+  transition: all 0.3s ease 0s;
+}
+process input[type=radio]:checked + label[for*="Radio"] article.levelAuthority-item figure.persona-info span {
+  display: block;
+  font-family: Gotham-Bold, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 112% 0px;
+}
+
+process input[type=radio]:checked + label[for*="Radio"] article.levelAuthority-item{
+  margin: 0px 8%;
+  height: 28%;
+  width: 84%;
+}
+
+process input[type=radio]:checked + label {
+  /*margin-top: -30px;*/
+}
+process label[for=mentorRadio] {
+  left:0%;
+}
+
+process label[for=creativeRadio] {
+  left:75%;
+}
+process .client-avatar {
+    background-image: url("../images/client_avatar.svg");
+}
+ 
+process .mentor-avatar {
+  background-image: url("../images/mentor_avatar.svg");
+}
+ 
+process .creative-avatar {
+  background-image: url("../images/creative_avatar.svg");
+}
+
+process .persona-info {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  display: block;
+  border-radius: 50%;
+  height: 100%;
+  transform: scale(0.9);
+}
+
+process .persona-info span {
+  display: block;
+  color: #555;
+  text-transform: uppercase;
+  font-size: medium;
+  text-shadow: 0px 0px 1px #FFF, 0px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: block;
+  padding-top: 114%;
+  transition: padding 0.3s linear 0.1s;
+  font-family: Gotham-Book, sans-serif;
+}
+ 
+process label figcaption {
+  color: #555;
+  font-size: 12px;
+  padding: 10px 5px;
+  margin: 39px auto;
+  transition: all 0.3s ease 0.2s;
+  font-family: Gotham-Book-Italic,sans-serif;
+  font-size: small;
+  line-height: 18px;
+}
+
+process input[type=radio]:checked + label .levelAuthority-item {
+    box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,0.8),
+        0 1px 2px rgba(0,0,0,0.1);
+}
+/*
+process label:not(label:hover) .levelAuthority-item {
+    box-shadow:
+        inset 0 0 0 5px rgba(255,255,255,0.8),
+        0 1px 2px rgba(0,0,0,0.1);
+}
+*/
+process input[type=radio]:checked + label .levelAuthority-item .persona-info {
+    opacity: 1;
+    transform: scale(1);   
+}
+process input[type=radio]:checked + label figcaption {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  opacity: 1;
+  margin: 42px auto;
+  font-size: medium; 
+}
+/*
+* Testimonials
+*/
+section.testimonials{
+  width: 100%;
+  height: 250px;
+}
+section.testimonials h2{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: Gotham-Bold;
+  font-size: x-large;
+  text-align: center;
+  color: #555;
+  padding: 15px 0px;
+}
+section.testimonials figure{
+  display: block;
+  width: 5%;
+  margin: 0px 47.5%;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #EF5A28;
+}
+section.testimonials figure img{
+  width: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+section.testimonials figcaption{
+  display: block;
+  width: 100%;
+  font-family: Gotham-Bold;
+  font-size: small;
+  text-align: center;
+  color: #555;
+  padding: 10px 0px 30px;
+}
+section.testimonials span{
+  display: block;
+  width: 100%;
+  font-family: Gotham-Book-Italic;
+  font-size: small;
+  text-align: center;
+  color: #555;
+  padding: 0px 0px 20px;
+}
+/*
+* Profile Sections
+*/
+aside#profileNav{
+  display: inline-block;
+  position: fixed;
+  border: 1px solid #000;
+  padding: 10px;
+  top: 90px;
+  left: 10px;
+}
+aside#profileNav ul li{
+  padding: 5px 0px 5px 0px;
+}
+article#profileContent{
+  display: inline-block;
+  width: calc(100% - 185px);
+  float: right;
+}
+/*
+* Profile
+*/
+modalwindow[use*="profile"] {
+    width: 85%;
+    height: 90%;
+    overflow-y: scroll;
+}
+form.profile {
+  padding-bottom: 11%;
+  font-family: Gotham-Book;
+  font-size: medium;
+  width: 100%;
+  z-index: 1;
+}
+form.profile aside figure#profileBanner{
+  display: inline-block;
+  width: 100%;
+}
+form.profile aside figure#profileBanner img{
+  z-index: -1;
+  width: 100%;
+}
+section#profileDetails{
+  position: relative;
+  top: -152px;
+  margin-bottom: -152px;
+}
+img#banner_dropIcon{
+    float: right;
+    position: relative;
+    top: -15px;
+    left: -100px;
+}
+input#banner_drop{
+    float: right;
+    position: relative;
+    top: -200px;
+}
+form.profile figure#avatar{
+  cursor: pointer;
+  width: 10%;
+  border-radius: 50%;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+}
+/*form.profile figure#avatar:hover {
+  border: 3px solid black;
+  content: url("../images/add_button.svg");
+  padding-bottom: 0 !important;
+}*/
+form.profile figure#avatar img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+form.profile figure#avatar img#avatarOverlay{
+  z-index: 10;
+  opacity: 0;
+}
+form.profile figure#avatar img#avatarOverlay:hover{
+  opacity: 1;
+}
+form.profile h2{
+  font-size: x-large;
+  font-weight: 300;
+  margin-top: 25px;
+}
+form.profile span{
+  display: block;
+  padding: 4px;
+}
+form.profile span + input, form.profile span + textarea{
+margin-bottom: 0px;
+width: 90%;
+}
+form.profile #name{
+  margin-top: 0px;
+}
+form.profile #name + input{
+  top: 19%;
+}
+form.profile #surname{
+  top: 29%;
+}
+form.profile #surname + input{
+  top: 28%;
+}
+form.profile #avatarAddBtn{
+  top: 39%;
+}
+form.profile #avatarAddBtn + label{
+  width: 150px;
+  display: block;
+}
+form.profile #avatarAddBtn + label span{
+  padding: 0px;
+  background: linear-gradient(to right, #73391D, #8F8F8F) repeat scroll 0% 0% transparent;
+}
+form.profile #avatarAddBtn + label span img {
+    width: calc(100% - 6px);
+    margin: 3px;
+    padding: 0px;
+    vertical-align: middle;
+    background: url('../images/background_image_1.png') repeat scroll 100% 100%, url('../images/background_image_0.jpg') repeat scroll 100% 100% transparent;
+}
+form.profile #avatar_drop2{
+  display: none;
+}
+form.profile #bio{
+  top: 51%;
+}
+form.profile #bio + textarea{
+    resize:vertical; 
+    top: 48%;
+}
+form.profile #location{
+  top: 64%;
+}
+form.profile #location + input{
+  top: 63%;
+}
+form.profile #email{
+  top: 73%;
+}
+form.profile #email + input{
+  top: 72%;
+}
+form.profile #website{
+  top: 82%;
+}
+form.profile #website + input{
+  top: 81%;
+}
+form.profile .orangeActionBannerButton{
+  margin-bottom: 0px;
+  top: calc(100% - 51px);
+  position: absolute;
+  left: 0px;
+}
+span.socialBool{
+  display: inline-block !important;
+  position: relative;
+  top: -12px;  
+}
+/*
+* Wallet
+*/
+section#wallet table, section#wallet th, section#wallet td {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+section#wallet table thead {
+  border: 1px solid black;
+}
+section#wallet table td {
+  padding: 5px;
+}
+section#wallet table {
+  border-collapse: collapse;
+  width: 80%;
+  position: relative;
+  top: -70px;
+}
+section#wallet #upgrade {
+  position: absolute;
+  top: 485px;
+  left: 80%;
+}
+section#wallet #total {
+  position: absolute;
+  top: 505px;
+}
+section#wallet #monthly {
+  position: absolute;
+  top: 540px;
+}
+section#wallet #package {
+  position: absolute;
+  top: 540px;
+  left: 80%;
+}
+/* 
+ *People
+*/
+span#searchPeople{
+  margin-left: 20%;
+}
+input#searchPeopleText{
+  width: 30%;
+}
+figure.peopleAvatar {
+    display: inline-block;
+    cursor: pointer;
+    width: 6%;
+    border-radius: 50%;
+    background-color: #EF5A28;
+    position: relative;
+    padding-bottom: 6%;
+    border: 3px solid white;
+    vertical-align: top;
+}
+figure.peopleAvatar  img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+span.peopleCont {
+    height: 85px;
+    display: inline-block;
+    width: 400px;
+}
+span.peopleCont * {
+    vertical-align: middle;
+}
+span.peopleUsername {
+    position: relative;
+    top: 10px;
+}
+span.peopleMusicPref {
+    position: relative;
+    top: 17px;
+}
+span.peopleViewProfile {
+    vertical-align: top;
+    position: relative;
+    top: 22px;
+}
+span.btn_peopleMessage {
+    background-color: #888;
+    padding: 0px 20px 0px 20px;
+    float: right;
+    position: relative;
+    top: -12px;
+    color: white;
+}
+span.btn_peopleMessage img {
+    vertical-align: middle;
+}
+span.btn_peopleAccept {
+    background-color: #888;
+    padding: 10px 20px 10px 20px;
+    float: right;
+    position: relative;
+    top: -12px;
+    left: -15px;
+}
+span.btn_peopleDecline {
+    background-color: #888;
+    padding: 10px 20px 10px 20px;
+    float: right;
+    position: relative;
+    top: -12px;
+}
+span#friendTab{
+    border: 1px solid black;
+    border-radius: 5px 0px 0px 5px;
+    padding: 10px 30px 10px 30px;
+    margin-left: calc(50% - 170px);
+}
+span#inviteTab{
+    border: 1px solid black;
+    border-radius: 0px 5px 5px 0px;
+    padding: 10px 20px 10px 20px;
+}
+span.tabSelected{
+  background-color: #888;
+}
+img.peopleTrashIcon{
+
+}
+@media only screen and (min-width : 1600px) {
+/* Styles */
+  form.profile{
+    width: 23%;
+  }
+  form.profile h2 {
+    font-size: x-large;
+    left: 6em;
+  }
+  form.profile span + input, form.profile span + textarea {
+    width: 50%;
+    padding: 18px;
+  }
+  form.profile #avatarAddBtn + label {
+    top: 38.5%;
+    left: 6.3em;
+  }
+  form.profile span {
+    top: 36.8%;
+  }
+}
+@media only screen and (min-width : 1900px) {
+/* Styles */
+  form.profile{
+    width: 23%;
+  }
+  form.profile h2 {
+    font-size: xx-large;
+    left: 6.5em;
+  }
+  form.profile span + input, form.profile span + textarea {
+    width: 57%;
+    padding: 18px;
+  }
+  form.profile #avatarAddBtn + label {
+    top: 37.5%;
+    left: 6.5em;
+  }
+  form.profile span {
+    top: 36.8%;
+  }
+}
+@media only screen and (min-width : 2200px) {
+/* Styles */
+  form.profile{
+    width: 23%;
+  }
+  form.profile h2 {
+    font-size: xx-large;
+    left: 6em;
+  }
+  form.profile span + input, form.profile span + textarea {
+    left: 13em;
+    width: 57%;
+    padding: 20px;
+  }
+  form.profile #avatarAddBtn + label {
+    top: 36.5%;
+    left: 8.6em;
+  }
+  form.profile span {
+    top: 36.8%;
+  }
+  form.profile #bio + textarea {
+    left: 13.4em;
+  }
+}
+/*
+* Portfolio
+*/
+portfolio{
+  min-height: 750px;
+  width: 75%;
+  display: inline-block;
+}
+portfolio label#portfolioDropZone{
+  position: relative;
+  float: left;
+  width: 15%;
+}
+portfolio label#portfolioDropZone span{
+  display: block;
+  padding: 0px;
+  background: linear-gradient(to right, #73391D, #8F8F8F) repeat scroll 0% 0% transparent;
+}
+portfolio label#portfolioDropZone span img {
+  width: calc(100% - 6px);
+  margin: 3px;
+  padding: 0px;
+  vertical-align: middle;
+  background: url('../images/background_image_1.png') repeat scroll 100% 100%, url('../images/background_image_0.jpg') repeat scroll 100% 100% transparent;
+}
+portfolio #portfolioDrop{
+  display: none;
+}
+portfolio .project{
+  position: relative;
+  width: 15%;
+  float: left;
+}
+portfolio .project img{
+  width: 100%;
+}
+portfolio .project aside{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: white;
+  font-family: Gotham-Bold, sans-serif;
+  font-size: large;
+}
+portfolio .project:hover aside{
+  opacity: 1;
+}
+portfolio .project aside figcaption{
+  top: 25%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+portfolio .project aside span:nth-child(1) {
+  left: 28%;
+}
+portfolio .project aside span:nth-child(2) {
+  left:50%;
+}
+portfolio .project aside span{
+  position: absolute;
+  top: 50%;
+  width: 22%;
+  text-align: right;
+}
+portfolio .project aside a{
+  /*margin-bottom: 0px;*/
+}
+portfolio .project:nth-child(4n) {
+  clear: left;
+}
+
+/*
+* ngImgCrop
+*/
+section[ng-controller=avatarCropModalWindow]{
+  width: 100%;
+}
+section[ng-controller=avatarCropModalWindow] figure.avatar{
+  width: 200px;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  float: left;
+  margin-left: 10%;
+}
+section[ng-controller=avatarCropModalWindow] figure.avatar img{
+  width: calc(100% + 2px);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: -3px;
+}
+section[ng-controller=avatarCropModalWindow] .cropArea {
+  overflow: hidden;
+  width:500px;
+  height:350px;
+  margin: 0px auto;
+};
+section[ng-controller=avatarCropModalWindow] #saveCrop {
+    width: 90px;
+    position: relative;
+    left: calc(10% + 55px);
+    margin-bottom: 0px;
+    top: -13%;
+};
+/*
+* ngImgCrop
+*/
+section[ng-controller=bannerCropModalWindow]{
+  width: 100%;
+}
+section[ng-controller=bannerCropModalWindow] figure.avatar{
+  width: 200px;
+  float: left;
+  margin-left: 10%;
+}
+section[ng-controller=bannerCropModalWindow] figure.avatar img{
+  width: calc(100% + 2px);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: -3px;
+}
+section[ng-controller=bannerCropModalWindow] .cropArea {
+  overflow: hidden;
+  width:500px;
+  height:350px;
+  margin: 0px auto;
+};
+section[ng-controller=bannerCropModalWindow] #saveCrop2 {
+    width: 90px;
+    position: relative;
+    left: calc(10% + 55px);
+    margin-bottom: 0px;
+    top: -13%;
+};
+/*
+* Upload Image
+*/
+section[ng-controller=uploadImageCropModalWindow]{
+  width: 100%;
+}
+section[ng-controller=uploadImageCropModalWindow] figure.avatar{
+  width: 200px;
+  float: left;
+  margin-left: 10%;
+}
+section[ng-controller=uploadImageCropModalWindow] figure.avatar img{
+  width: calc(100% + 2px);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: -3px;
+}
+section[ng-controller=uploadImageCropModalWindow] .cropArea {
+  overflow: hidden;
+  width:500px;
+  height:350px;
+  margin: 0px auto;
+};
+section[ng-controller=uploadImageCropModalWindow] #saveCrop {
+    width: 90px;
+    position: relative;
+    left: calc(10% + 55px);
+    margin-bottom: 0px;
+    top: -13%;
+};
+
+/*
+* Image Larger
+*/
+section[ng-controller=imageModalWindow]{
+  width: 100%;
+}
+section[ng-controller=imageModalWindow] img{
+  width: 80%;
+  margin: auto;
+}
+/*
+* Busking Modal
+*/
+modalwindow[use*="busk"] {
+    width: 85%;
+    height: 90%;
+    overflow-y: scroll;
+}
+.buskModal {
+  left: calc(100% - 300px);
+}
+form.busk {
+  text-align: center;
+}
+form.busk figure#avatar{
+  cursor: pointer;
+  width: 30%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 30%;
+  border: 3px solid white;
+  left: 35%;
+}
+form.busk figure#avatar img{
+  position: absolute;
+  width: 99%;
+  border-radius: 50%;
+  left: 1px;
+}
+form.busk h2{
+
+}
+/*
+*Gallery
+*/
+.galleryFilters {
+    background: rgb(39,37,38);
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+.galleryFilters ul {
+    margin: 0;
+    padding: 0;
+}
+
+.galleryFilters li {
+    float: left;
+    list-style-type: none;
+    font-size: 1.12em;
+    color: rgb(125,125,125);
+}
+
+.galleryFilters li:hover {
+    cursor: pointer;
+}
+
+.galleryFilters li.active {
+    color: rgb(255,255,255);
+}
+
+  .gallery {
+    width: 100%;
+  }
+
+@media (max-width: 1200px) {
+  .galleryWrap { 
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .galleryWrap { 
+    margin-left: 152px;
+    margin-right: 152px;
+  }
+}
+
+
+.galleryBy {
+    padding: 0.5em;
+    text-align: right;
+    position: absolute;
+    top: 285px;
+}
+
+.market-link:hover .market-container {
+    
+    background: rgba(235,235,235,1);
+
+}
+
+.market-link:hover .market-title {
+    color: rgb(80,80,80); 
+}
+
+.market-link:hover .market-creator {
+    
+    color: rgba(80,80,80,0.5); 
+}
+
+.market-title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700; 
+    font-size: 1em;
+}
+
+.market-title a{   
+    font-weight: 700; 
+    font-size: 1em;
+}
+
+.market-title a:hover {   
+    color: rgb(255, 255, 255); 
+    
+    font-size: 1em;
+}
+
+a.productgallery {
+    color: #e14c07;
+}
+
+a.productgallery:hover {
+    color: #fff;
+}
+
+.market-creator {
+    font-size: 0.7em;
+    color: rgba(255,255,255,0.4); 
+}
+
+.market-creator a{
+    font-size: 1em;
+    color: rgba(255,255,255,0.5); 
+}
+
+.market-creator a:hover{
+    font-size: 1em;
+    color: rgb(225, 76, 7); 
+}
+
+.market-container-wrap {
+    margin: 0.1em;
+    position: relative;
+}
+
+.market-container {
+ 
+    width: 100%;
+    height: 325px;
+    float: left;
+    overflow: hidden;
+    margin: 0px;
+
+    background: rgba(25,25,25,1);
+}
+
+.market-link:hover .market-container-imagewrap {
+    border-bottom: 5px solid rgb(225, 76, 7); 
+}
+
+.market-container-imagewrap {
+    height:225px;
+    overflow: hidden;
+    border-bottom: 5px solid rgba(255,255,255,0.1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.market-container-imagewrap img {
+    height:100%;
+}
+
+.market-container img {
+    display: block;
+}
+
+.portrait img {
+    width: 100%;
+}
+
+.landscape img {
+    height: 100%;
+}
+/*
+portfolio Project Modal largerView
+*/
+modalwindow[use*='largerView']{
+  height: 90%!important;
+  width: 90%!important;
+}
+modalwindow[use*='largerView'] div.md-content{
+  height: 100%!important;
+  width: 100%!important;
+}
+modalwindow[use*='largerView'] div.md-content md-view{
+  height: 100%!important;
+  width: 100%!important;
+}
+modalwindow[use*='largerView'] div.md-content md-title{
+  padding: 4% 0px 2% 6%!important;
+}
+section#largerView{
+  width: 100%;
+  height: 75%;
+  background-size: contain!important;
+  background-position: center center!important;
+  background-repeat: no-repeat!important;
+}
+/*
+* Portfolio Project
+*/
+section.portfolioProjectContainer section.portfolioProject{
+  display: block;
+}
+section.portfolioProjectContainer label#portfolioProjectDropZone{
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  margin-bottom: 40px;
+}
+section.portfolioProjectContainer label#portfolioProjectDropZone span{
+  display: block;
+  padding: 0px;
+  background: linear-gradient(to right, #73391D, #8F8F8F) repeat scroll 0% 0% transparent;
+}
+section.portfolioProjectContainer label#portfolioProjectDropZone span img {
+  width: calc(100% - 6px);
+  margin: 3px;
+  padding: 0px;
+  vertical-align: middle;
+  background: url('../images/background_image_1.png') repeat scroll 100% 100%, url('../images/background_image_0.jpg') repeat scroll 100% 100% transparent;
+}
+section.portfolioProjectContainer #portfolioProjectDrop{
+  display: none;
+}
+section.portfolioProjectContainer section.portfolioProject #card{
+  width: 30%;
+  text-align: center;
+  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.2);
+  float: right;
+}
+section.portfolioProjectContainer section.portfolioProject #card #submit{
+  display: inline-block;
+}
+section.portfolioProjectContainer section.portfolioProject #card img#thumbnail{
+  margin: 50px;
+  width: calc(100% - 100px);
+}
+section.portfolioProjectContainer section.portfolioProject #card figcaption{
+  margin-bottom: 50px;
+  color: white;
+  font-size: x-large;
+  font-family: Gotham-Bold, sans-serif;
+}
+section.portfolioProjectContainer section.portfolioProject #card #description{
+  width: calc(100% - 70px);
+}
+section.portfolioProjectContainer #files{
+  width: 70%;
+}
+section.portfolioProjectContainer #files article.portfolioImage{
+  width: calc(100% - 50px);
+  margin-bottom: 40px;
+}
+section.portfolioProjectContainer #files img{
+  max-width: 100%;
+}
+section.portfolioProjectContainer #files span{
+  display: block;
+
+}
+
+modalwindow[use*="portfolioProject"]{
+  width: 85%;
+  height: 90%;
+  overflow-y: scroll;
+}
+modalwindow[use*="portfolioProject"] .md-content{
+  min-height: 100%;
+}
+
+/*
+* Comment Box
+*/
+section#commentContainer #content article div p {
+  line-height: 22px;
+  text-align: left;
+  margin: 0;
+  color: #777;
+  padding-left: 15px;
+  border-left: 8px solid rgba(63,148,148, 0.1);
+  display: inline-block;
+}
+section#commentContainer #content .comment article .fileThumbnail {
+  width: 30%;
+  padding: 0px 0px 30% 15px;
+  background-size: contain!important;
+  -moz-background-size: contain!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  display: inline-block;
+  border-left: 8px solid rgba(63,148,148, 0.1);
+}
+section#commentContainer #content .comment article.avatar {
+  display: inline-block;
+  width: 10%;
+  vertical-align:top;
+}
+section#commentContainer #content .comment article.avatar img{
+  width: 100%;
+}
+section#commentContainer {
+  position: relative;
+  height: 600px;
+  float: right;
+  display: block;
+  clear: right;
+  width: 30%;
+}
+section#commentContainer #content{
+  overflow-y: scroll;
+  height: 500px;
+  background: rgba(0,0,0,0.2);
+}
+section#commentContainer #content .comment:last-child {
+  padding-bottom: 100px;
+}
+
+section#commentContainer controls{
+display: block;
+position: absolute;
+width: 100%;
+top: 85%;
+height: 100px;
+}
+section#commentContainer controls label {
+background-image: url("../../images/add_button_dark.svg");
+background-position: center center;
+background-size: contain;
+background-repeat: no-repeat;
+width: 60px;
+display: inline-block;
+height: 60px;
+}
+section#commentContainer controls label:after {
+  content: none;
+  background: none;
+  position: unset;
+  bottom: 0px;
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+label#projectDropZone img{
+  width: 100%;
+  height: 100%;
+}
+section#commentContainer controls input#projectDrop + input{
+  margin-bottom: 0px;
+  width: calc(100% - 29px);
+}
+section#commentContainer controls span#sendComment {
+  color: #FFF;
+  font-family: Gotham-Bold;
+  background-color: #D35A31;
+  display: inline-block;
+  position: unset;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: top;
+  height: 60px;
+  width: calc(100% - 65px);
+  line-height: 60px;
+}
+
+section#admin article.content {
+  width: calc(100% - 325px);
+  height: 500px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px 100px 0 0;
+}
+
+section#admin aside.menu {
+  width: 200px;
+  height: 250px;
+  padding: 10px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+section#admin label input{
+  margin: 0;
+  padding: 0;
+}
+/*
+* Wall
+*/
+section#wall aside#postBox{
+  width: 450px;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px 10px 80px 10px;
+  margin: auto;
+}
+section#wall aside#postBox textarea{
+  width: calc(80% - 20px);
+  padding: 10px;
+  height: 50px;
+}
+section#wall aside#postBox input{
+  float: right;
+  background-color: #777;
+  color: white;
+  padding: 5px;
+  margin: 0px;
+}
+section#wall aside#postBox figure#avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#wall  figure#avatarPost img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#wall article#posts{
+  width: 470px;
+  margin: auto
+}
+section#wall article#posts article.post{
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px 10px 0px 10px;
+  margin-bottom: 20px;
+}
+section#wall article#posts article.post p{
+    width: calc(75%);
+    min-height: 60px;
+    margin: 10px 0px 0px 12%;
+}
+section#wall article#posts article.post figure.avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#wall  article#posts article.post figure.avatarPost img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#wall article#posts article.post img.wallTrashIcon{
+  float: right;
+}
+section#wall article#posts article.post span.wallShare input{
+  background-color: #777;
+  color: white;
+  padding: 5px;
+}
+section#wall article.post aside.postComments{
+  width: 100%;
+  min-height: 50px;
+}
+section#wall article.post aside.postComments p{
+  width: calc(80%);
+  min-height: 50px;
+}
+
+section#wall article#posts article.post aside.wallCommentBox{
+  float: none!important;
+  display: none;
+}
+/*section#wall article#posts article.post aside.postComments {
+    width: calc(100% - 130px);
+    display: inline-block;
+    vertical-align: top;
+    float: none!important;
+}*/
+section#wall article#posts article.post aside.wallCommentBox textarea{
+  width: calc(80% - 20px);
+  padding: 10px;
+  height: 50px;
+}
+section#wall article#posts article.post aside.wallCommentBox input{
+  margin-left: calc(100% - 70px);
+  margin-bottom: 20px;
+}
+section#wall article#posts article.post aside.wallCommentBox figure#avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#wall article#posts article.post aside.wallCommentBox img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#wall article#posts article.post span.artistWallLikes{
+  float: right;
+}
+/*
+* Gallery
+*/
+section#artistGallery ul li:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+section#artistGallery ul li:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+section#artistGallery ul li {
+    border: 1px solid black;
+    width: 100px;
+    margin-right: -5px;
+    display: inline-block;
+}
+section#artistGallery ul li input {
+  display: none;
+}
+section#artistGallery ul li label {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+section#artistGallery div#galleryNav {
+    margin: 0px auto 15px auto;
+    width: 405px;
+}
+section#artistGallery ul li.tabSelected {
+    background-color: #888;
+}
+
+section#artistGallery div.galleryItem{
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 0px auto 20px auto;
+}
+section#artistGallery div.galleryItem article{
+    width: 280px;
+    min-height: 80px;
+    display: inline-block;
+}
+section#artistGallery div.galleryItem article img{
+  width: 100%;
+}
+section#artistGallery div.galleryItem article.galleryImgBox{
+    width: 72%;
+    display: inline-block;
+}
+section#artistGallery div.galleryItem article.galleryImgBox figure{
+    width: 100%;
+}
+section#artistGallery div.galleryItem article.galleryImgBox figure img{
+    width: 100%;
+}
+section#artistGallery div.galleryItem article img.iconMusic{
+  width: 80px;
+}
+section#artistGallery div.galleryItem aside{
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+section#artistGallery div.galleryItem p{
+  width: calc(80%);
+  min-height: 60px;
+}
+section#artistGallery div.galleryItem span.galleryLikes{
+  float: right;
+}
+section#artistGallery div.galleryItem span.galleryBusked{
+  float: right;
+}
+section#artistGallery div.galleryItem figure.avatarGallery{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#artistGallery div.galleryItem figure.avatarGallery img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#artistGallery div.galleryItem img.galleryTrashIcon{
+  float: right;
+}
+section#artistGallery div.galleryItem span.galleryShare input{
+  background-color: #777;
+  color: white;
+  padding: 5px;
+}
+section#artistGallery div.galleryItem hr{
+  width: 88%;
+  float: right;
+}
+section#artistGallery div.galleryItem aside.galleryCommentBox{
+  float: none!important;
+  display: none;
+}
+section#artistGallery div.galleryItem aside.postComments {
+  width: calc(100% - 130px);
+  display: inline-block;
+  vertical-align: top;
+  float: none!important;
+  margin-left: 12%;
+}
+section#artistGallery div.galleryItem aside.galleryCommentBox textarea{
+  width: calc(80% - 20px);
+  padding: 10px;
+  height: 50px;
+}
+section#artistGallery div.galleryItem aside.galleryCommentBox input{
+  margin-left: calc(100% - 70px);
+  margin-bottom: 0px;
+}
+section#artistGallery div.galleryItem aside.galleryCommentBox figure#avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#artistGallery div.galleryItem aside.galleryCommentBox img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#artistGallery div.galleryItem p.galleryDescription{
+  margin-left: 40px;
+  padding: 5px 0px 5px 0px;
+  width: calc(100% - 40px);
+  min-height: 0px;
+}
+/*
+* Upload
+**************/
+section#upload ul li:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+section#upload ul li:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+section#upload ul li {
+    border: 1px solid black;
+    width: 100px;
+    margin-right: -5px;
+    display: inline-block;
+}
+section#upload ul li input {
+  display: none;
+}
+section#upload ul li label {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+section#upload div#uploadNav {
+  margin-left: calc(50% - 225px);
+  margin-top: 30px;
+}
+section#upload ul li.tabSelected {
+    background-color: #888;
+}
+section#upload input.uploadBtn {
+  width: 200px!important;
+  padding: 5px;
+}
+section#upload div.uploadDetailsOther {
+    width: 80%;
+    min-height: 280px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+}
+section#upload div.uploadDetailsOther aside{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+section#upload div.uploadDetailsOther h2{
+    margin: 15px auto;
+    font-size: x-large;
+    width: 245px;
+}
+section#upload div.uploadDetailsOther span{
+  width: 40%;
+  display: block;
+}
+section#upload div.uploadDetailsOther aside.uploadDrop span{
+  width: 70%;
+  padding-bottom: 35%;
+  display: block;
+  border: 1px dashed black;
+  text-align: center;
+}
+section#upload div.uploadDetailsOther input, section#upload div.uploadDetailsOther textarea{
+  width: 70%;
+}
+section#upload div.uploadDetailsOther div button{
+  margin-bottom: 0px!important;
+}
+
+/**/
+section#upload div.uploadDetailsVideo {
+    width: 350px;
+    min-height: 280px;
+    margin: 0px auto 15px auto;
+}
+section#upload div.uploadDetails aside{
+    width: 49%;
+    display: inline-block;
+}
+section#upload div.uploadDetailsVideo h2{
+    margin: 15px auto;
+    font-size: x-large;
+    width: 350px;
+}
+section#upload div.uploadDetails h2, section#upload div.uploadDetailsVideo h2{
+    margin: 15px auto;
+    font-size: x-large;
+    width: 245px;
+}
+section#upload div.uploadDetails span{
+  width: 40%;
+  display: block;
+}
+section#upload div.uploadDetails aside span.dragNdrop{
+  width: 70%;
+  padding-bottom: 35%;
+  display: block;
+  border: 1px dashed black;
+}
+section#upload div.uploadDetails input, section#upload div.uploadDetails textarea{
+  width: 70%;
+}
+section#upload div.uploadDetails div button{
+  margin-bottom: 0px!important;
+}
+/*
+* Playlist
+*/
+div.playlistItem{
+    width: 400px;
+    margin-bottom: 30px;
+}
+div.playlistItem img{
+  float: left;
+  margin: 0px 10px;
+}
+div.playlistItem span.playlistBusk{
+  margin-left: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+div.playlistItem span.playlistShare input{
+  background-color: #777;
+  color: white;
+  padding: 5px;
+}
+section#playlist div.playlistItem aside.playlistCommentBox{
+  float: none!important;
+  display: none;
+}
+section#playlist div.playlistItem aside.postComments {
+    width: calc(100% - 130px);
+    display: inline-block;
+    vertical-align: top;
+    float: none!important;
+}
+section#playlist div.playlistItem aside.playlistCommentBox textarea{
+  width: calc(80% - 20px);
+  padding: 10px;
+  height: 50px;
+}
+section#playlist div.playlistItem aside.playlistCommentBox input{
+  margin-left: calc(100% - 70px);
+  margin-bottom: 0px;
+}
+section#playlist div.playlistItem aside.playlistCommentBox figure#avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#playlist div.playlistItem aside.playlistCommentBox img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+/*
+* View Other
+*/
+section#viewOther {
+  padding-bottom: 11%;
+  font-family: Gotham-Book;
+  font-size: medium;
+  width: 80%;
+  z-index: 1;
+  margin: auto;
+}
+section#viewOther aside figure#profileBanner{
+  display: inline-block;
+}
+section#viewOther aside figure#profileBanner img{
+  z-index: -1;
+  height: 350px;
+}
+section#profileDetails{
+  position: relative;
+  top: -152px;
+  margin-bottom: -152px;
+}
+section#viewOther figure#avatar{
+  cursor: pointer;
+  width: 10%;
+  border-radius: 50%;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+}
+section#viewOther figure#avatar img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#viewOther h2{
+  font-size: x-large;
+  font-weight: 300;
+}
+section#viewOther a.social{
+  display: inline-block;
+  padding: 8px;
+  background-color: #999;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
+/*section#viewOther span.musicPrefItem{
+  display: inline-block;
+  padding: 8px;
+  background-color: blue;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+}*/
+section#viewOther span.tagItem{
+  display: inline-block;
+  padding: 8px;
+  background-color: blue;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+}
+/*section#viewOther span.tagItem:first-child{
+  margin: 5px 5px 5px 0px;
+}*/
+section#viewOther #name{
+  top: 20%;
+}
+
+section#viewOther p#bio{
+  top: 51%;
+}
+section#viewOther .orangeActionBannerButton{
+  margin-bottom: 0px;
+  top: calc(100% - 51px);
+  position: absolute;
+  left: 0px;
+}
+
+/*sub gallery*/
+section#viewOther ul li:first-child {
+    border-radius: 5px 0px 0px 5px;
+}
+section#viewOther ul li:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+section#viewOther ul li {
+    border: 1px solid black;
+    width: 100px;
+    margin-right: -5px;
+    display: inline-block;
+}
+section#viewOther ul li input {
+  display: none;
+}
+section#viewOther ul li label {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+section#viewOther div#galleryNav {
+    margin: 0px auto 15px auto;
+    width: 405px;
+}
+section#viewOther ul li.tabSelected {
+    background-color: #888;
+}
+
+section#viewOther div.galleryItem{
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+}
+section#viewOther div.galleryItem article{
+  width: 200px;
+  min-height: 200px;
+  display: block;
+}
+section#viewOther div.galleryItem article img.videoThumnail{
+  width: 100%;
+}
+section#viewOther div.galleryItem article.galleryImgBox{
+    width: 72%;
+    display: inline-block;
+}
+section#viewOther div.galleryItem article.galleryImgBox figure{
+    width: 100%;
+}
+section#viewOther div.galleryItem article.galleryImgBox figure img{
+    width: 100%;
+}
+section#viewOther div.galleryItem article img.iconMusic{
+  width: 80px;
+}
+section#viewOther div.galleryItem aside{
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+section#viewOther div.galleryItem p{
+  width: calc(80%);
+  min-height: 60px;
+}
+section#viewOther div.galleryItem span.galleryLikes{
+  float: right;
+}
+section#viewOther div.galleryItem span.galleryBusked{
+  float: right;
+}
+section#viewOther div.galleryItem figure.avatarGallery{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#viewOther div.galleryItem figure.avatarGallery img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/*
+* Explore Page
+*/
+section#explore div#featured {
+  width: 800px;
+  background-color: black;
+  padding: 50px;
+  margin: auto;
+}
+section#explore div#featured img#featuredVideo{
+  width: 400px;
+}
+section#explore div div#featuredDetails{
+  width: 250px;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 50px;
+}
+section#explore div.uploadedVideo{
+  display: inline-block;
+  width: 150px;
+}
+section#explore img.videoThumbnail{
+  width: 100%;
+}
+
+section#explore ul li:first-child {
+    border-radius: 5px 0px 0px 5px!important;
+}
+section#explore ul li:last-child {
+    border-radius: 0px 5px 5px 0px!important;
+}
+section#explore ul li {
+  border: 1px solid black!important;
+  margin-right: -1px!important;
+  display: inline-block!important;
+  height: 20px!important;
+  vertical-align: top!important;
+  padding: 5px!important;
+} 
+section#explore ul li input {
+  display: none;
+}
+section#explore ul li label {
+    width: 100% !important;
+    display: block!important;
+    text-align: center !important;
+    height: 100% !important;
+    line-height: unset !important;
+    position: initial !important;
+    padding-left: 0 !important;
+}
+section#explore div#galleryNav {
+  margin: 0px auto 15px auto!important;
+  width: 100%!important;
+  display: block!important;
+}
+section#explore div#galleryNav ul{
+  width: calc(80% + 44px)!important;
+  overflow: auto!important;
+  white-space: nowrap!important;
+  margin: auto!important;
+}
+section#explore #searchUsername{
+  width: 80%!important;
+  margin: auto!important;
+  display: block!important;
+}
+section#explore ul li.tabSelected {
+    background-color: #888;
+}
+
+section#explore div.galleryItem{
+    width: 350px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 0px auto 20px auto;
+}
+section#explore div.galleryItem article{
+    width: 80px;
+    min-height: 80px;
+    display: inline-block;
+}
+section#explore div.galleryItem aside{
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+section#explore div.galleryItem p{
+  width: calc(80%);
+  min-height: 60px;
+}
+section#explore div.galleryItem span.galleryLikes{
+  float: right;
+}
+section#explore div.galleryItem span.galleryBusked{
+  float: right;
+}
+section#explore div.galleryItem figure.avatarGallery{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#explore div.galleryItem figure.avatarGallery img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#explore div.galleryItem img.galleryTrashIcon{
+  float: right;
+}
+section#explore div.galleryItem span.galleryShare input{
+  background-color: #777;
+  color: white;
+  padding: 5px;
+}
+section#explore div.galleryItem hr{
+  width: 88%;
+  float: right;
+}
+section#explore div.galleryItem aside.galleryCommentBox{
+  float: none!important;
+  display: none;
+}
+section#explore div.galleryItem aside.postComments {
+  width: calc(100% - 130px);
+  display: inline-block;
+  vertical-align: top;
+  float: none!important;
+  margin-left: 12%;
+}
+section#explore div.galleryItem aside.galleryCommentBox textarea{
+  width: calc(80% - 20px);
+  padding: 10px;
+  height: 50px;
+}
+section#explore div.galleryItem aside.galleryCommentBox input{
+  margin-left: calc(100% - 70px);
+  margin-bottom: 0px;
+}
+section#explore div.galleryItem aside.galleryCommentBox figure#avatarPost{
+  width: 10%;
+  border-radius: 50%;
+  background-color: #EF5A28;
+  position: relative;
+  padding-bottom: 10%;
+  border: 3px solid white;
+  float: left;
+}
+section#explore div.galleryItem aside.galleryCommentBox img{
+  position: absolute;
+  width: 100%;
+  border-radius: 50%;
+}
+section#explore div.galleryItem p.galleryDescription{
+  margin-left: 40px;
+  padding: 5px 0px 5px 0px;
+  width: calc(100% - 40px);
+  min-height: 0px;
+}
+section#explore aside#pagination{
+  width: 290px;
+  margin: auto;
+  height: 200px;
+}

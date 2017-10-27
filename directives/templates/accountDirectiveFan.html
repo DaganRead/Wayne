@@ -1,0 +1,52 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <figure class="card-profile-image-fan center-align" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <h5 class="center-align">{{ user.username }}</h5>
+    <br/><br/><br/><br/>
+            <!-- Featured Video Title -->
+            <div class="card light-blue">
+              <div class="card-content white-text">
+                <span class="card-title">Account Settings</span>
+              </div>
+            </div><!-- Featured video title  -->
+            <br />
+    <section class="contentCentered">
+        <div class="input-field">
+            <input type="text" ng-model="user.email" placeholder="{{ user.email }}" />
+            <label>Email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" ng-model="user.password" placeholder="{{ user.password }}" />
+            <label>New Password</label>
+        </div>
+        <div class="input-field">
+            <input type="password" ng-model="user.passwordConfirm" placeholder="{{ user.passwordConfirm }}" />
+            <label>Confirm Password</label>
+        </div>
+        <br/>
+        <span>Active Social Login</span>
+        <hr />    
+        <br/>
+        <div class="switch">Facebook : 
+            <label>Off
+                <input type="checkbox" ng-model="user.social.fb.bool" >
+                <span class="lever"></span> On
+            </label>
+        </div><br />
+        <div class="switch">Google : 
+            <label>Off
+                <input type="checkbox" ng-model="user.social.youtube.bool" >
+                <span class="lever"></span> On
+            </label>
+        </div><br />
+        <div class="switch">Twitter : 
+            <label>Off
+                <input type="checkbox" ng-model="user.social.twitter.bool" >
+                <span class="lever"></span> On
+            </label>
+        </div><br />
+        <button ng-click="submit()" class="btn waves-effect waves-light ">Save</button>
+    </section>
+  </div><!--/ profile-page-header -->

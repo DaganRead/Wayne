@@ -1,0 +1,70 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <div id="banner_drop_zone" class="card-image waves-effect waves-block waves-light">
+      <img alt="user background" class="activator" ng-src="{{ user.banner }}" />
+    </div>
+    <figure class="card-profile-image-artist" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s3 offset-s2">
+          <h4 class="card-title grey-text text-darken-4">{{ user.username }}</h4>
+          <p class="medium-small grey-text">Artist</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">{{ user.people.length }}+</h4>
+          <p class="medium-small grey-text">Fans</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <p class="medium-small grey-text">Likes</p>
+        </div>
+        <div class="col s2 right-align">
+          <h4 class="card-title grey-text text-darken-4">$ {{ user.wallet.total| number:2 }}</h4>
+          <p class="medium-small grey-text">Total Busked</p>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="col s12">
+      <!-- Featured Video Title -->
+      <div class="card light-blue">
+        <div class="card-content white-text">
+          <span class="card-title">Wallet</span>
+        </div>
+      </div><!-- Featured video title  -->
+    </div>
+      <div class="row">
+        <div class="col s3 offset-s2">
+          <h4 class="card-title grey-text text-darken-4">${{user.wallet.total | number:2}}</h4>
+          <p class="medium-small grey-text">Total earnings</p>
+        </div>
+        <div class="col s3 center-align">
+          <h4 class="card-title grey-text text-darken-4">${{user.wallet.monthTotal | number:2}}</h4>
+          <p class="medium-small grey-text">Current month earnings</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">${{user.wallet.limit}}</h4>
+          <p class="medium-small grey-text">Withdraw limit</p>
+        </div>
+        <div class="col s1 right-align">
+          <p class="medium-small"><button ng-click="upgrade()" class="btn waves-effect waves-light ">Upgrade package</button></p>
+        </div>
+      </div>
+    <section class="section">
+  		<table>
+  			<thead>
+  				<tr>
+  					<th>Date of payment:</th><th>Busked amount: ($)</th><th>Currency</th><th>Process fee: ($)</th><th>Platform fee: ($)</th><th> Your share: ($)</th>
+  				</tr>
+  			</thead>
+  			<tbody>
+  				<tr ng-repeat="payment in user.wallet.transactions track by $index" >
+  					<td>{{payment.formattedData.niceTime}}</td><td>${{payment.formattedData.total | number:2}}</td><td>{{payment.formattedData.currency}}</td><td>${{payment.formattedData.processFee | number:2}}</td><td>${{payment.formattedData.platformFee | number:2}}</td><td>${{payment.formattedData.share | number:2}}</td>
+  				</tr>
+  			</tbody>
+  			<tfooter><tr><td></td><td></td><td></td><td></td><td></td><td>Total: ${{user.wallet.monthTotal | number:2}}</td></tr></tfooter>
+  		</table>
+  	</section>
+</div>

@@ -1,0 +1,235 @@
+<section ng-controller="topNav">
+    <modal-window bind-compiled-html="avatarCropModalWindow.html" bind-title="avatarCropModalWindow.title" use="avatarCropModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="bannerCropModalWindow.html" bind-title="bannerCropModalWindow.title" use="bannerCropModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="loginModalWindow.html" bind-title="loginModalWindow.title" use="loginModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="subscriptionModalWindow.html" bind-title="subscriptionModalWindow.title" use="subscriptionModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="registerModalWindow.html" bind-title="registerModalWindow.title" use="registerModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="forgotResetModalWindow.html" bind-title="forgotResetModalWindow.title" use="forgotResetModalWindow.use"></modal-window>
+    <modal-window bind-compiled-html="buskModalWindow.html" bind-title="buskModalWindow.title" use="buskModalWindow.use"></modal-window>
+    <chat-modal-window conversation="selectedConversation" user="user"></chat-modal-window>
+
+    <div id="topNav" class="navbar-fixed">
+        <nav class="light-blue">
+          <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="" class="brand-logo"><img id="logo" ng-src="../../images/logo.png" ng-click="gotoLanding()" /></a>
+                <a href="" ng-click="openMobileMenu()" data-activates="slide-out" class="button-collapse">MENU<i class="mdi-navigation-menu"></i></a>
+                    <ul id="slide-out" class="side-nav" ng-if="user.authed && user.levelAuthority === 'artist'">
+                        <li>UPDATES</li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="" ng-click="openNotification()">
+                                <img ng-src="../../images/icon_notifications.png" />
+                                <span class="grey new badge" ng-if="notificationsLoaded !== false">{{notificationsUnread}}</span>
+                                <span class="grey badge" ng-if="notificationsLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="openMessages()">
+                                <img ng-src="../../images/icon_messages.png" />
+                                <span class="grey new badge" ng-if="messagesLoaded !== false">{{messagesUnread}}</span>
+                                <span class="grey badge" ng-if="messagesLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li>MENU</li>
+                        <li class="divider"></li>
+                        <li><a ng-click="goTo('home')" href="explore/:{{user.username}}"><img ng-src="../../images/icon_home.png"/> HOME</a></li>
+                        <li><a ng-click="goTo('wall')" href="{{user.username}}/wall"><img ng-src="../../images/icon_wall.png"/> WALL</a></li>
+                        <li><a ng-click="goTo('people')" href="{{user.username}}/people"><img ng-src="../../images/icon_friends.png"/> PEOPLE</a></li>
+                        <li><a ng-click="goTo('upload')" href="{{user.username}}/upload"><img ng-src="../../images/icon_upload.png"/> UPLOAD</a></li>
+                        <li><a ng-click="goTo('media')" href="{{user.username}}/media"><img ng-src="../../images/icon_gallery.png"/> MEDIA</a></li>
+                        <li><a ng-click="goTo('profile')" href="{{user.username}}/profile"><img ng-src="../../images/icon_settings.png"/> SETTINGS</a></li>
+                        <li><a href="" ng-click="logoutEventHandler()"><img ng-src="../../images/icon_logOut.png"/> LOG OUT</a></li>
+                    </ul>
+                    <ul id="slide-out" class="side-nav" ng-if="user.authed && user.levelAuthority === 'fan'">
+                        <li>UPDATES</li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="" ng-click="openNotification()">
+                                <img ng-src="../../images/icon_notifications.png" />
+                                <span class="grey new badge" ng-if="notificationsLoaded !== false">{{notificationsUnread}}</span>
+                                <span class="grey badge" ng-if="notificationsLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="openMessages()">
+                                <img ng-src="../../images/icon_messages.png" />
+                                <span class="grey new badge" ng-if="messagesLoaded !== false">{{messagesUnread}}</span>
+                                <span class="grey badge" ng-if="messagesLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li>MENU</li>
+                        <li class="divider"></li>
+                        <li><a  ng-click="goTo('home')" href="explore/:{{user.username}}"><img ng-src="../../images/icon_home.png"/> HOME</a></li>
+                        <li><a  ng-click="goTo('wall')" href="{{user.username}}/wall"><img ng-src="../../images/icon_wall.png"/> WALL</a></li>
+                        <li><a  ng-click="goTo('people')" href="{{user.username}}/people"><img ng-src="../../images/icon_friends.png"/> PEOPLE</a></li>
+                        <li><a  ng-click="goTo('playlist')" href="{{user.username}}/playlist"><img ng-src="../../images/icon_playlist.png"/> PLAYLIST</a></li>
+                        <li><a  ng-click="goTo('profile')" href="{{user.username}}/profile"><img ng-src="../../images/icon_settings.png"/> SETTINGS</a></li>
+                        <li><a href="" ng-click="logoutEventHandler()"><img ng-src="../../images/icon_logOut.png"/> LOG OUT</a></li>
+                    </ul>
+                    <ul id="slide-out" class="side-nav" ng-if="!user.authed">
+                        <li>
+                            <a ng-click="loginModalEnterEventHandler()">LOGIN</a>
+                        </li>
+                        <li>
+                            <a href="how-it-works">HOW IT WORKS</a>
+                        </li>
+                        <li>
+                            <a href="explore">EXPLORE</a>
+                        </li>
+                    </ul>
+                <ul class="right hide-on-med-and-down" ng-if="!user.authed">
+                    <li ng-click="goToHowItWorks()">
+                        <button class="btn waves-effect waves-light deep-orange">How it works</button>
+                    </li>
+                    <li ng-click="goToExplore()">
+                        <button class="btn waves-effect waves-light deep-orange">Explore</button>
+                    </li>
+                    <li>
+                        <button ng-click="loginModalEnterEventHandler()" class="btn waves-effect waves-light deep-orange">Log In</button>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down" ng-if="user.authed && user.levelAuthority !== 'admin'">
+                    <li>
+                        <button ng-click="goToHowItWorks()" class="btn waves-effect waves-light deep-orange">How it works</button>
+                    </li>
+                    <li>
+                        <button ng-click="goToExplore()" class="btn waves-effect waves-light deep-orange">Explore</button>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down" ng-if="user.authed && user.levelAuthority === 'admin'">
+                    <li>
+                        <button ng-click="logoutEventHandler()" class="btn waves-effect waves-light deep-orange"> Log Out</button>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="white hide-on-med-and-down" ng-hide="!user.authed">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <ul class="right hide-on-med-and-down" ng-if="user.authed">
+                        <li>
+                            <a href="" ng-click="openNotifications()">
+                                <img ng-src="../../images/icon_notifications.png" />
+                                <span class="grey new badge" ng-if="notificationsLoaded !== false">{{notificationsUnread}}</span>
+                                <span class="grey badge" ng-if="notificationsLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                            <ul id="notificationsMenuDrop" ng-mouseleave="openNotifications()" ng-hide="notificationsUnread === 0" class="dropdown-content">
+                                <li>
+                                    <h5>NOTIFICATIONS</h5>
+                                </li>
+                                <li class="divider"></li>
+                                <li ng-click="openNotification()" ng-repeat="notification in user.notifications">
+                                    <a href="#!"><i class="mdi-action-settings"></i>{{notification.message}}</a>
+                                    <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                                </li>
+                                <li ng-click="clearNotifications()">
+                                    <p>Clear all</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a ng-click="openMessages()">
+                                <img ng-src="../../images/icon_messages.png" />
+                                <span class="grey new badge" ng-if="messagesLoaded !== false">{{messagesUnread}}</span>
+                                <span class="grey badge" ng-if="messagesLoaded === false">
+                                    <img class="smallLoading" ng-src="../../images/loading_icon.gif"/>
+                                </span>
+                            </a>
+                            <ul id="messagesMenuDrop" ng-mouseleave="openMessages()" ng-hide="messagesUnread === 0" class="dropdown-content">
+                                <li>
+                                    <h5>MESSAGES</h5>
+                                </li>
+                                <li class="divider"></li>
+                                <li ng-click="openMessage(conversation)" ng-repeat="conversation in user.messages | orderBy:'id':true">
+                                    <a href=""><i class="mdi-action-settings"></i><avatar class="messageCenterAvatar" person="conversation.user"></avatar>{{conversation.messages[conversation.messages.length-1].body}}</a>
+                                    <time-stamp momenttime="conversation.messages[conversation.messages.length-1].timestamp"></time-stamp> 
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Dropdown Trigger -->
+                        <li>
+                            <a class="dropdown-button" ng-click="openMenu()" href="" data-activates="profileMenuDrop"><avatar person="user.username"></avatar>{{user.username}}
+                                <i class="mdi-navigation-arrow-drop-down right"></i>
+                            </a>
+                            <ul id="profileMenuDrop" ng-mouseleave="openMenu()" ng-if="user.levelAuthority === 'artist'" class="dropdown-content">
+                                <li>MENU</li>
+                                <li class="divider"></li>
+                                <li><a ng-click="goTo('home')" href="explore/:{{user.username}}"><img ng-src="../../images/icon_home.png"/> Home</a></li>
+                                <li><a ng-click="goTo('wall')" href="{{user.username}}/wall"><img ng-src="../../images/icon_wall.png"/> Wall</a></li>
+                                <li><a ng-click="goTo('people')" href="{{user.username}}/people"><img ng-src="../../images/icon_friends.png"/> People</a></li>
+                                <li><a ng-click="goTo('upload')" href="{{user.username}}/upload"><img ng-src="../../images/icon_upload.png"/> Upload</a></li>
+                                <li><a ng-click="goTo('media')" href="{{user.username}}/media"><img ng-src="../../images/icon_gallery.png"/> Media</a></li>
+                                <li><a ng-click="goTo('profile')" href="{{user.username}}/profile"><img ng-src="../../images/icon_settings.png"/> Settings</a></li>
+                                <li><a ng-click="logoutEventHandler()"><img ng-src="../../images/icon_logOut.png"/> Log Out</a></li>
+                            </ul>
+                            <ul id="profileMenuDrop" ng-mouseleave="openMenu()" ng-if="user.levelAuthority === 'fan'" class="dropdown-content">
+                                <li>MENU</li>
+                                <li class="divider"></li>
+                                <li><a ng-click="goTo('home')" href="explore/:{{user.username}}"><img ng-src="../../images/icon_home.png"/> Home</a></li>
+                                <li><a ng-click="goTo('wall')" href="{{user.username}}/wall"><img ng-src="../../images/icon_wall.png"/> Wall</a></li>
+                                <li><a ng-click="goTo('people')" href="{{user.username}}/people"><img ng-src="../../images/icon_friends.png"/> People</a></li>
+                                <li><a ng-click="goTo('playlist')" href="{{user.username}}/playlist"><img ng-src="../../images/icon_playlist.png"/> Playlist</a></li>
+                                <li><a ng-click="goTo('profile')" href="{{user.username}}/profile"><img ng-src="../../images/icon_settings.png"/> Settings</a></li>
+                                <li><a ng-click="logoutEventHandler()"><img ng-src="../../images/icon_logOut.png"/> Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="hide-on-med-and-down" ng-if="navto === 'profile' || navto === 'account' || navto === 'wallet'">
+                        <li>
+                            <a ng-click="goTo('profile')" href="{{user.username}}/profile">
+                                <img ng-src="../../images/icon_settings.png" /> Profile 
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-click="goTo('account')" href="{{user.username}}/account">
+                                <img ng-src="../../images/icon_profile.png" /> Account 
+                            </a>
+                        </li>
+                        <li ng-show="user.levelAuthority === 'artist'">
+                            <a ng-click="goTo('wallet')" href="{{user.username}}/wallet">
+                                <img ng-src="../../images/icon_wallet.png" /> Wallet 
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="hide-on-med-and-down" ng-if="navto === 'wall' || navto === 'people' || navto === 'media' || navto === 'playlist'">
+                        <li>
+                            <a ng-click="goTo('wall')" href="{{user.username}}/wall">
+                                <img ng-src="../../images/icon_wall.png" /> Wall 
+                            </a>
+                        </li>
+                        <li ng-show="user.levelAuthority === 'artist'">
+                            <a ng-click="goTo('media')" href="{{user.username}}/media">
+                                <img ng-src="../../images/icon_gallery.png" /> Media 
+                            </a>
+                        </li>
+                        <li ng-show="user.levelAuthority === 'fan'">
+                            <a ng-click="goTo('playlist')" href="{{user.username}}/playlist">
+                                <img ng-src="../../images/icon_playlist.png" /> Playlist 
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-click="goTo('people')" href="{{user.username}}/people">
+                                <img ng-src="../../images/icon_friends.png" /> People 
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>

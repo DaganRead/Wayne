@@ -1,0 +1,14 @@
+<section id="floatingVideo">
+	<embed-video width="500px" height="250px" autoPlay="1" data-ng-href="{{currentUrl}}"></embed-video>
+	<nav ng-if="showFloatingVideo==true">
+		<span class="floatingBusk" >
+			<input id="buskProfile" ng-click="busk($event, artistUsername)" ng-mouseenter="buskAnim($event)" ng-mouseleave="buskAnim($event)" type="image" ng-src="../../images/buskClosed.png"/>
+			<audio>
+				<source src="../../images/coins.ogg" type="audio/ogg">
+				Your browser does not support the audio tag.
+			</audio>
+		</span>
+		<span class="right" ng-click="minimize()">Minimize</span>
+		<span class="right" >Like</span>
+	</nav>
+</section>

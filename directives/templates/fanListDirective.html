@@ -1,0 +1,74 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <div id="banner_drop_zone" class="card-image waves-effect waves-block waves-light">
+      <img alt="user background" class="activator" ng-src="{{ user.banner }}" />
+    </div>
+    <figure class="card-profile-image-artist" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s3 offset-s2">
+          <h4 class="card-title grey-text text-darken-4">{{ user.username }}</h4>
+          <p class="medium-small grey-text">Artist</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">{{ user.people.length }}+</h4>
+          <p class="medium-small grey-text">Fans</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <p class="medium-small grey-text">Likes</p>
+        </div>
+        <div class="col s2 right-align">
+          <h4 class="card-title grey-text text-darken-4">$ {{ user.wallet.total| number:2 }}</h4>
+          <p class="medium-small grey-text">Total Busked</p>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <section class="contentCentered">
+            <div class="row">
+              <ul class="tabs tab-demo-active z-depth-1 cyan" style="width: 100%;">
+                <li class="tab col s6" ng-click="tabToFriends()">
+                  <a ng-class="{active : tabSelect==''}" class="white-text waves-effect waves-light">Fan and Friends</a>
+                </li>
+                <li class="tab col s6" ng-click="tabToInvitations()" >
+                  <a ng-class="{active : !tabSelect==''}" class="white-text waves-effect waves-light">Pending Invitations</a>
+                </li>
+                <div class="indicator" style="right: 140px; left: 141px;"></div><div class="indicator" style="right: 140px; left: 141px;"></div>
+              </ul>
+            </div>
+    <br/>
+    <div class="row">
+          <span class="input-field col s10 left">
+              <input type="text" ng-model="searchPeople"/>
+              <label>Find</label>
+          </span>
+          <span class="input-field col s2 right">
+            <input type="button" class="btn waves-effect waves-light deep-orange" ng-click="searchPeople=''" value="clear"/>
+          </span>
+      </div>
+        <br/>
+    <section class="col s12 center-align" ng-if="peopleTab==='friends'">
+      <div class="friend" ng-repeat="fan in user.people | filter:searchPeople">
+        <span class="peopleCont">
+          <avatar-chip ng-if="fan.levelAuthority == 'artist'" ng-click="exploreProfile(fan.username)" person="fan.username"></avatar-chip>
+          <avatar-chip ng-if="fan.levelAuthority == 'fan'" person="fan.username"></avatar-chip>
+          <input type="image" ng-click="peopleTrash(fan)" ng-src="../../images/icon_trash.png" class="btn waves-effect waves-light white" />
+          <input type="image" class="btn waves-effect waves-light white" ng-src="../../images/icon_message.png" ng-click="peopleMessage(fan.username)" />
+        </span>
+      </div>
+    </section>
+    <section class="col s12 center-align"  ng-if="peopleTab==='invitations'">
+      <div class="invite" ng-repeat="invite in user.invites | filter:searchPeople">
+        <span class="peopleCont">
+          <avatar-chip ng-if="invite.levelAuthority == 'artist'" ng-click="exploreProfile(invite.username)" person="invite.username"></avatar-chip>
+          <avatar-chip ng-if="invite.levelAuthority == 'fan'" person="invite.username"></avatar-chip>
+          <input type="button" class="btn waves-effect waves-light white" ng-click="inviteDecline(invite)" value="Decline"/>
+          <input type="button" class="btn waves-effect waves-light white" ng-click="inviteAccept(invite)" value="Accept"/>
+        </span>
+      </div>
+    </section>
+  </section>
+<div>

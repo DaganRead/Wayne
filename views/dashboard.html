@@ -1,0 +1,69 @@
+<section id="admin">
+	<aside class="menu">
+		<h2 ng-if="currentSelectedPage !== ''"> Current page: {{currentSelectedPage}}</h2><br />
+		<h2 ng-if="currentSelectedPage === ''">Select a page to start:</h2><br />
+		<div>
+		    <label for="landing" >Landing
+				<input name="group1" type="radio" id="landing" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="landing" />
+		    </label><br />
+		    <label for="how-it-works" >How it works
+		    	<input name="group1" type="radio" id="how-it-works" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="how-it-works" />
+		    </label><br />
+		    <label for="home" >Home
+		    	<input name="group1" type="radio" id="home" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="home" />
+		    </label><br />
+		    <label for="privacy-policy" >Privacy Policy
+		    	<input name="group1" type="radio" id="privacy-policy" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="privacy-policy" />
+		    </label><br />
+		    <label for="terms-and-conditions" >Terms and Conditions
+		    	<input name="group1" type="radio" id="terms-and-conditions" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="terms-and-conditions" />
+		    </label><br />
+		    <label for="questions-and-answers" >Questions and Answers
+		    	<input name="group1" type="radio" id="questions-and-answers" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="questions-and-answers" />
+		    </label><br />
+		    <br />
+		    <label for="categories" >Categories
+		    	<input name="group1" type="radio" id="categories" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="categories" />
+		    </label><br />
+		    <label for="featured-videos" >Featured Videos
+		    	<input name="group1" type="radio" id="featured-videos" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="featured-videos" />
+		    </label><br />
+		    <label for="banner-images" >Banner Images
+		    	<input name="group1" type="radio" id="banner-images" ng-model="currentSelectedPage" ng-change="updateSelectedPage()" value="banner-images" />
+		    </label>
+		</div>
+	</aside>
+	<article class="content">
+		<div ng-if="currentSelectedPage === ''">
+			<p>Welcome to the Tunebooster Administration Section. Get started modifying your system.</p>
+		</div>
+		<div ng-show="currentSelectedPage !== 'featured-videos' && currentSelectedPage !== 'categories' && currentSelectedPage !== 'banner-images' && currentSelectedPage !== ''">
+			<h2>Page editor:</h2><br />
+			  <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea><br />
+			  <input type="button" id="save" ng-click="saveHTML()" class="orangeActionButton" value="Save" />
+		</div>
+		<div ng-if="currentSelectedPage === 'categories'">
+			<h2>Categories List:</h2><br />
+			<input type="text" ng-model="newCategory" class="combinedInput" placeholder="rock"/><span class="combinedBtn" ng-click="addCategory($event, newCategory)">add Category</span><br />
+			<article ng-repeat="categoryItem in categories track by $index">
+				<p class="categoryItem">{{categoryItem}}</p><input class="categoryItemRemove" ng-click="removeCategory(categoryItem)" value="remove" /><br />
+			</article>
+		</div>
+		<div ng-if="currentSelectedPage === 'featured-videos'">
+			<h2>Featured Videos List:</h2><br />
+			<input type="text" ng-model="newVideo.url" class="combinedInput" placeholder="https://youtube.com/..."/><span class="combinedBtn" ng-click="addFeaturedVideo($event, newVideo.url)">add Video</span><br />
+			<section class="videoItem" ng-repeat="video in featuredVideos track by $index">
+				<embed-video loop=1 ng-href="{{video}}"><a href="{{video}}">Watch</a></embed-video>
+				<input class="categoryItemRemove" ng-click="removeFeaturedVideo(video)" value="remove" /><br>
+			</section><br />
+		</div>
+		<!-- <div ng-if="currentSelectedPage === 'banner-images'">
+			<h2>Banner Images List:</h2><br />
+			<input type="text" ng-model="newImage" class="combinedInput" placeholder="https://youtube.com/..."/><span class="combinedBtn" ng-click="addBannerImage($event, image)">add Image</span><br />
+			<section class="imageItem" ng-repeat="image in bannerImages track by $index">
+				<img src="image.url" class="adminBannerImgIcon"/><br />
+			</section><br />
+			  <input type="button" id="save" ng-click="addBannerImage()" class="orangeActionButton" value="Save" />
+		</div> -->
+	</article>
+</section>

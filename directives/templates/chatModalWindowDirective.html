@@ -1,0 +1,94 @@
+<div class="modal" id="chatModalWindow" ng-class="{'modal-fixed-footer':selectedConversation.user!=''}">
+	<div class="modal-header modal-fixed-header">
+		<h5 class="col s12">
+			<div class="row">
+				<div class="col s1 center-align waves-effect waves-green btn-flat" ng-show="step==1||step==2" ng-click="step=0;selectedConversation={user:''}"><</div>
+				<div class="col s7" ng-show="!step" ng-class="{'offset-s1':step==0}">Chat</div>
+				<div class="col s10 center-align" ng-show="step==1">New Conversation</div>
+				<div class="col s10 center-align" ng-show="step==2">Conversation with {{selectedConversation.user}}</div>
+				<div class="col s3" ng-show="!step"><button ng-click="step=1" class="btn waves-effect waves-light deep-orange">New</button></div>
+				<div class="col s1 center-align modal-action modal-close waves-effect waves-green btn-flat">X</div> 
+			</div>
+		</h5>
+	</div>
+	<div class="modal-content" scroll-glue>
+		<div class="row" ng-show="step==0">
+			<div class="col s12 z-depth-1">
+				<ul class="collection">
+					<li class="collection-item avatar" ng-click="selectConversation(conversation)" ng-repeat="conversation in user.messages|orderBy:'id':true">
+                      <avatar person="conversation.user"></avatar>
+                      <span class="email-title">{{conversation.user}}</span>
+                      <p class="truncate grey-text ultra-small">{{conversation.messages[conversation.messages.length-1].body}}</p>
+                      <a class="secondary-content email-time"><time-ago class="grey-text ultra-small" time="conversation.messages[conversation.messages.length-1].timestamp"></time-ago></a>
+                    </li>		
+				</ul>
+			</div>
+		</div>
+		<div class="row" ng-show="step==1">
+			<h6>Send a message to:</h6>
+	        <div class="input-field col s12">
+	            <input type="text" id="searchContactsText" ng-model="searchContacts"/>
+	            <label>Search</label>
+	        </div>
+			<div class="col s12" ng-show="searchContacts!=''">
+				<h6>People</h6>
+				<ul class="collection">
+					<li class="collection-item" ng-repeat="person in user.people|filter:{username:searchContacts}|orderBy:'id':true">
+                      <avatar-chip person="person.username"></avatar-chip>
+                    </li>		
+				</ul>
+			</div>
+		</div>
+		<div id="messageBox" class="row col s12" ng-show="step==2">
+			<div class="row" ng-repeat="message in selectedConversation.messages | orderBy:'id':false">
+	              	<div id="profile-page-wall-post" class="card col s10" ng-class='{"right":message.from == user.username}'>
+	              		<div class="section">
+			              	<div class="card-profile-title">
+			                  <div class="">
+			                    <div class="col s2" ng-if="message.from != user.username">
+			                      <avatar person="message.from"></avatar>                       
+			                    </div>
+			                    <div class="col s10" ng-if="message.from != user.username">
+			                      <p class="grey-text text-darken-4 margin">{{message.from}}</p>
+			                      <span class="grey-text text-darken-1 ultra-small">Said privately  -  <time-stamp class="messageTime" momenttime="message.timestamp"></time-stamp></span>
+			                    </div>
+			                    <div class="col s2 right right-align" ng-if="message.from == user.username">
+			                      <avatar person="message.from"></avatar>                       
+			                    </div>
+			                    <div class="col s10 right right-align" ng-if="message.from == user.username">
+			                      <p class="grey-text text-darken-4 margin">{{user.username}}</p>
+			                      <span class="grey-text text-darken-1 ultra-small"><time-stamp class="messageTime" momenttime="message.timestamp"></time-stamp>  -  Said privately</span>
+			                    </div>
+			                    <div class="col s1 right-align">
+			                      <i class="mdi-navigation-expand-more"></i>
+			                    </div>
+			                  </div>
+			              	</div>
+			            </div>
+		            	<div class="card-content">
+							<p>{{message.body}}</p>
+							<span class="row" ng-class="{right:message.from != user.username, left:message.from == user.username}"><img id="messageSeen" ng-if="message.seen" ng-src="../../images/icon_messageSeen.png" /><img id="messageSeen" ng-if="!message.seen" ng-src="../../images/icon_messageNotSeen.png" /></span><br />
+						</div>                      
+	            	</div>
+	        </div>
+		</div>
+	</div>
+	<div class="modal-footer" ng-show="selectedConversation.user!=''">
+		<div class="row">
+			<div class="col s12">
+				<div class="col s1 avatar">
+					<avatar person="user.username"></avatar>                       
+				</div>
+				<div class="input-field col s9" ng-show="selectedConversation.user!=false">
+					<input type="text" ng-model="newMessage" />
+				    <label>Type a message</label>
+				</div>
+				<div class="col s2">
+					<button ng-click="sendMessage()" class="btn waves-effect waves-light ">Send
+				    	<i class="mdi-content-send right"></i>
+				    </button>                    
+				</div>
+		    </div>
+		</div>
+	</div>
+</div>

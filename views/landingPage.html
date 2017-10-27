@@ -1,0 +1,12 @@
+<banner>
+	<div id="overlay">
+		<img ng-src="../images/banner/banner_overlay.svg" title="" />
+		<h2><span class="orangeHighlight">Tunebooster</span> is a music promotion platform </h2>
+    	<input type="button" id="artistSignUp" ng-click="joinTeamModalEnterEventHandler('artist')" class="orangeActionButton" value="Join as an artist" />
+    	<input type="button" id="fanSignUp" ng-click="joinTeamModalEnterEventHandler('fan')" class="orangeActionButton" value="Join as a fan" />
+	</div>
+	<img source="{{ image.source }}" title="{{ image.title }}" class="image" />
+</banner>
+<cms-page bind-compiled-html="landingPage.html" ></cms-page>
+<testimonial data="testimonials"></testimonial>
+<cms-footer></cms-footer>

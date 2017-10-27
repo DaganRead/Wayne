@@ -1,0 +1,125 @@
+  <!-- profile-page-header -->
+  <div class="card" id="profile-page-header">
+    <div id="banner_drop_zone" class="card-image waves-effect waves-block waves-light">
+      <img alt="user background" class="activator" ng-src="{{ user.banner }}" />
+    </div>
+    <figure class="card-profile-image-artist" id="avatar_drop_zone">
+      <img alt="profile image" class="circle z-depth-2 responsive-img activator" ng-src="{{ user.avatar }}">
+    </figure>
+    <div class="card-content">
+      <div class="row">
+        <div class="col s3 offset-s2">
+          <h4 class="card-title grey-text text-darken-4">{{ user.username }}</h4>
+          <p class="medium-small grey-text">Artist</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">{{ user.people.length }}+</h4>
+          <p class="medium-small grey-text">Fans</p>
+        </div>
+        <div class="col s2 center-align">
+          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <p class="medium-small grey-text">Likes</p>
+        </div>
+        <div class="col s2 right-align">
+          <h4 class="card-title grey-text text-darken-4">$ {{ user.wallet.total| number:2 }}</h4>
+          <p class="medium-small grey-text">Total Busked</p>
+        </div>
+      </div>
+    </div>
+	<div id="profile-page-wall" class="col s12 m8">
+        <!-- profile-page-wall-share -->
+        <div id="profile-page-wall-share" class="row">
+            <div class="col s12">
+		        <!-- Featured Video Title -->
+		        <div class="card light-blue">
+		          <div class="card-content white-text">
+		            <span class="card-title">Tell a story</span>
+		          </div>
+		        </div><!-- Featured video title  -->
+                <!-- UpdateStatus-->
+                <div id="UpdateStatus" class="tab-content col s12  grey lighten-4">
+                    <div class="row">
+                        <div class="col s2">
+                        	<img ng-src="{{ user.avatar }}" alt="" class="circle responsive-img valign profile-image-post">
+                        </div>
+                        <div class="input-field col s10">
+                        	<textarea id="textarea" row="2" ng-model="newWallPost" class="materialize-textarea"></textarea>
+                        	<label for="textarea" class="">What's on your mind?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    	<div class="col s12 m6 share-icons">
+                        	<a href="#"><i class="mdi-image-camera-alt"></i></a>
+                        	<a href="#"><i class="mdi-action-account-circle"></i></a>
+                        	<a href="#"><i class="mdi-hardware-keyboard-alt"></i></a>
+                        	<a href="#"><i class="mdi-communication-location-on"></i></a>
+                        </div>
+                        <div class="col s12 m6 right-align">
+                            <a class="waves-effect waves-light btn" ng-click="artistWallPost()"><i class="mdi-maps-rate-review left"></i>Post</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ profile-page-wall-share -->
+
+        <!-- profile-page-wall-posts -->
+        <div id="profile-page-wall-posts" class="row">
+          <div class="col s12">
+              <!-- medium -->
+              <div id="profile-page-wall-post" class="card" ng-repeat="post in user.wall | orderBy:'id':true">
+              <div class="card-profile-title">
+                  <div class="row">
+                    <div class="col s1">
+                      <avatar person="post.username"></avatar>                       
+                    </div>
+                    <div class="col s10">
+                      <p class="grey-text text-darken-4 margin">{{post.username}}</p>
+                      <span class="grey-text text-darken-1 ultra-small">Shared publicly  -  {{post.timestamp}}</span>
+                    </div>
+                    <div class="col s1 right-align">
+                      <i class="mdi-navigation-expand-more"></i>
+                    </div>
+                  </div>
+              </div>
+              <div class="card-content">
+					    	<span class="card-title activator grey-text text-darken-4">{{ post.title }}</span>
+					    	<p>{{post.body}}</p>
+					    </div>
+              <div class="card-reveal">
+          			<span class="card-title grey-text text-darken-4">Comments<i class="material-icons right">close</i></span><br/>
+          			<div class="row" ng-repeat="comment in post.comments track by $index">
+          				<div class="col s5" ng-if="comment.username==user.username" ng-class="{'right right-align':comment.username==user.username}">
+          					<span>{{comment.body}}</span>
+            				<span><avatar-chip person="comment.username"></avatar-chip></span>
+            			</div>
+            			<div class="col s5" ng-if="comment.username!=user.username">
+            				<span><avatar-chip person="comment.username"></avatar-chip></span>
+            				<span>{{comment.body}}</span>
+            			</div>
+          			</div>
+          			</div>
+                <div class="card-action row">
+                  <div class="col s4 card-action-share">
+                    <a ng-click="artistWallLike($event, post)" >Like {{post.likes.counter}}</a>                          
+                    <a ng-click="artistWallShare($event, post)" >Share</a><br />
+                    <a class="activator">Comments</a>
+                    <a ng-click="artistWallTrash(post)" >Delete</a>
+                  </div>
+                  <div class="col s1 center-align">
+                    <img ng-src="{{ user.avatar }}" alt="My profile avatar" class="circle responsive-img valign profile-image-post" />
+                  </div>
+                  <div class="input-field col s6 margin">
+                    <input id="profile-comments" ng-model="wallCommentBody" class="validate margin" value="" type="text" />
+                    <label for="profile-comments" class="">Your thoughts...</label>
+                  </div>
+                  <div class="col s1 right-align">
+                    <img ng-click="artistWallCommentPost($event, post)" ng-src="../../images/icon_messages.png" />
+                  </div>
+                </div>                        
+              </div>
+          </div>                  
+        </div>
+        <!--/ profile-page-wall-posts -->
+      </div>
+	</div>
