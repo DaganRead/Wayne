@@ -3,7 +3,7 @@
     <!-- versionCode is optional and Android only -->
 
     <name>Tunebooster</name>
-    <description>Tunebooster</description>
+    <description>Home of the digital busking world.</description>
     <author>DaganRead</author>
     <preference name="phonegap-version" value="cli-7.0.1" />
     <preference name="orientation" value="portrait" />
